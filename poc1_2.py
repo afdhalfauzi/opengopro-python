@@ -100,47 +100,83 @@ async def main(args: argparse.Namespace) -> None:
             "ev" : EV[EV_VALUE],
         }
         json_string = json.dumps(settings_json)
+        json_string = json_string.encode()
         print(json_string)
-        ser.write(json_string.encode())
-        
+        ser.write(json_string)
         print("Waiting for json command..")
+        
         while True:
             if ser.in_waiting:
-                json_string = ser.readline().decode("utf-8")
-                print(json_string)
-                json_data = json.loads(json_string)
-                start_stream = json_data['stream']
-                shutter = json_data['shutter']
-                iso = json_data['iso']
-                awb = json_data['awb']
-                ev = json_data['ev']
-                
-                if start_stream == 1:
-                    if not stream_started:
-                        await start_livestream(args, gopro, ser)
-                elif start_stream == 0:
-                    await stop_livestream(args, gopro)
+                serial_string = ser.readline().decode("utf-8")
+                print(serial_string)
+
+                if is_json(serial_string):	#only decode if serial_string in json format
+                    json_data = json.loads(serial_string)
+                else:
+                    json_data = ""
+
+                if serial_string == "get_setting":
+                    http_command = GOPRO_BASE_URL + "/gp/gpControl/status"
+                    print("Getting current GoPro settings..")
+                    response = requests.get(http_command, timeout = 10)
+                    response.raise_for_status()
+                    settings_response = json.dumps(response.json())
+                    settings_json = json.loads(settings_response)
                     
-                if shutter != SHUTTER_VALUE:
-                    http_command = GOPRO_BASE_URL + "/gp/gpControl/setting/" + SHUTTER_ID + "/" + str(shutter)
-                    print("Changing shutter speed into " + SHUTTER[shutter])
-                    response = requests.get(http_command, timeout = 10)
-                    SHUTTER_VALUE =  shutter
-                if iso != ISO_VALUE:
-                    http_command = GOPRO_BASE_URL + "/gp/gpControl/setting/" + ISO_ID + "/" + str(iso)
-                    print("Changing ISO into " + ISO[iso])
-                    ISO_VALUE = iso
-                    response = requests.get(http_command, timeout = 10)
-                if awb != AWB_VALUE:
-                    http_command = GOPRO_BASE_URL + "/gp/gpControl/setting/" + AWB_ID + "/" + str(awb)
-                    print("Changing AWB into " + AWB[awb])
-                    response = requests.get(http_command, timeout = 10)
-                    AWB_VALUE = awb
-                if ev != EV_VALUE:
-                    http_command = GOPRO_BASE_URL + "/gp/gpControl/setting/" + EV_ID + "/" + str(ev)
-                    print("Changing EV into " + EV[ev])
-                    response = requests.get(http_command, timeout = 10)
-                    EV_VALUE = ev
+                    
+                    SHUTTER_VALUE = settings_json['settings'][SHUTTER_ID]  #int
+                    ISO_VALUE = settings_json['settings'][ISO_ID]
+                    AWB_VALUE = settings_json['settings'][AWB_ID]
+                    EV_VALUE = settings_json['settings'][EV_ID]
+                    
+                    #build JSON using dictionary
+                    settings_json = {
+                        "stream" : 0,
+                        "shutter" : SHUTTER[SHUTTER_VALUE],
+                        "iso" : ISO[ISO_VALUE],
+                        "awb" : AWB[AWB_VALUE],
+                        "ev" : EV[EV_VALUE],
+                    }
+                    json_string = json.dumps(settings_json)
+                    json_string = json_string.encode()
+                    print(json_string)
+                    ser.write(json_string)
+                if "stream" in json_data:
+                    start_stream = json_data['stream']
+                    if start_stream == 1:
+                        if not stream_started:
+                            await start_livestream(args, gopro, ser)
+                    elif start_stream == 0:
+                        await stop_livestream(args, gopro)
+                    
+                if "shutter" in json_data:	#check if "shutter" key exist in json
+                    shutter = json_data['shutter']
+                    if shutter != SHUTTER_VALUE:
+                        http_command = GOPRO_BASE_URL + "/gp/gpControl/setting/" + SHUTTER_ID + "/" + str(shutter)
+                        print("Changing shutter speed into " + SHUTTER[shutter])
+                        response = requests.get(http_command, timeout = 10)
+                        SHUTTER_VALUE =  shutter
+                if "iso" in json_data:
+                    iso = json_data['iso']
+                    if iso != ISO_VALUE:
+                        http_command = GOPRO_BASE_URL + "/gp/gpControl/setting/" + ISO_ID + "/" + str(iso)
+                        print("Changing ISO into " + ISO[iso])
+                        ISO_VALUE = iso
+                        response = requests.get(http_command, timeout = 10)
+                if "awb" in json_data:
+                    awb = json_data['awb']
+                    if awb != AWB_VALUE:
+                        http_command = GOPRO_BASE_URL + "/gp/gpControl/setting/" + AWB_ID + "/" + str(awb)
+                        print("Changing AWB into " + AWB[awb])
+                        response = requests.get(http_command, timeout = 10)
+                        AWB_VALUE = awb
+                if "ev" in json_data:
+                    ev = json_data['ev']
+                    if ev != EV_VALUE:
+                        http_command = GOPRO_BASE_URL + "/gp/gpControl/setting/" + EV_ID + "/" + str(ev)
+                        print("Changing EV into " + EV[ev])
+                        response = requests.get(http_command, timeout = 10)
+                        EV_VALUE = ev
 
 
 def parse_arguments() -> argparse.Namespace:
@@ -219,6 +255,13 @@ async def stop_livestream(args: argparse.Namespace, gopro: WirelessGoPro):
     await gopro.ble_command.set_shutter(shutter=Params.Toggle.DISABLE)
     await gopro.ble_command.release_network()
     stream_started = 0
+
+def is_json(myJson):
+    try:
+        json.loads(myJson)
+    except ValueError as e:
+         return False
+    return True
 
 if __name__ == "__main__":
     asyncio.run(main(parse_arguments()))
