@@ -118,7 +118,7 @@ async def main(args: argparse.Namespace) -> None:
                     json_data = ""
 
                 if "getMedia" in json_data:
-                    media_handler.get_media_list()
+                    media_handler.download_last_captured_media()
                 
                 if "reqConfig" in json_data:
                     http_command = GOPRO_BASE_URL + "/gp/gpControl/status"
