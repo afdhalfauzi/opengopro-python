@@ -17,6 +17,9 @@ import serial
 import json
 import requests
 
+import media_handler
+
+
 console = Console()  # rich consoler printer
 rtmp_URL = "rtmp://angkasatimelapse.com/live/mykey"
 wifi_ssid = "BMZimages"
@@ -114,7 +117,10 @@ async def main(args: argparse.Namespace) -> None:
                 else:
                     json_data = ""
 
-                if serial_string == "get_setting":
+                if "getMedia" in json_data:
+                    media_handler.get_media_list()
+                
+                if "reqConfig" in json_data:
                     http_command = GOPRO_BASE_URL + "/gp/gpControl/status"
                     print("Getting current GoPro settings..")
                     response = requests.get(http_command, timeout = 10)
