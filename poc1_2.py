@@ -117,7 +117,8 @@ async def main(args: argparse.Namespace) -> None:
                 else:
                     json_data = ""
 
-                if "getMedia" in json_data:
+                if "shutter" in json_data:
+                    assert (await gopro.ble_command.set_shutter(shutter=Params.Toggle.ENABLE)).ok
                     media_handler.download_last_captured_media()
                 
                 if "reqConfig" in json_data:
@@ -248,11 +249,6 @@ async def start_livestream(args: argparse.Namespace, gopro: WirelessGoPro, ser: 
 
     console.print("[yellow]Livestream is now streaming and should be available for viewing.")
     ser.write(b'{"stream":2}')
-    # print("stream2")
-    # await ainput("Press enter to stop livestreaming...\n")
-
-    # await gopro.ble_command.set_shutter(shutter=Params.Toggle.DISABLE)
-    # await gopro.ble_command.release_network()
             
 async def stop_livestream(args: argparse.Namespace, gopro: WirelessGoPro):
     # await ainput("Press enter to stop livestreaming...\n")
