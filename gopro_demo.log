@@ -1,3 +1,4 @@
+<<<<<<< HEAD
    MainThread:14:41:12.509 util.py                                   210 DEBUG    | Send cmd --> nmcli general permissions |grep enable-disable-wifi
    MainThread:14:41:12.781 util.py                                   216 DEBUG    | Receive response --> org.freedesktop.NetworkManager.enable-disable-wifi                yes   
 
@@ -9,11 +10,25 @@
 
    MainThread:14:41:13.143 util.py                                   210 DEBUG    | Send cmd -->  nmcli dev
    MainThread:14:41:13.157 util.py                                   216 DEBUG    | Receive response --> DEVICE         TYPE      STATE                   CONNECTION    
+=======
+   MainThread:10:53:16.426 util.py                                   210 DEBUG    | Send cmd --> nmcli general permissions |grep enable-disable-wifi
+   MainThread:10:53:16.814 util.py                                   216 DEBUG    | Receive response --> org.freedesktop.NetworkManager.enable-disable-wifi                yes   
+
+   MainThread:10:53:16.814 util.py                                   210 DEBUG    | Send cmd --> nmcli general permissions |grep scan
+   MainThread:10:53:17.190 util.py                                   216 DEBUG    | Receive response --> org.freedesktop.NetworkManager.wifi.scan                          yes   
+
+   MainThread:10:53:17.190 util.py                                   210 DEBUG    | Send cmd --> nmcli --version
+   MainThread:10:53:17.196 util.py                                   216 DEBUG    | Receive response --> nmcli tool, version 1.42.4
+
+   MainThread:10:53:17.197 util.py                                   210 DEBUG    | Send cmd -->  nmcli dev
+   MainThread:10:53:17.212 util.py                                   216 DEBUG    | Receive response --> DEVICE         TYPE      STATE                   CONNECTION    
+>>>>>>> 84b41b4 (media list)
 wlan0          wifi      connected               preconfigured 
 lo             loopback  connected (externally)  lo            
 p2p-dev-wlan0  wifi-p2p  disconnected            --            
 eth0           ethernet  unavailable             --            
 
+<<<<<<< HEAD
    MainThread:14:41:13.158 wireless.py                                98 DEBUG    | Wifi setup. Using [WifiCli] driver::[wlan0] interface
    MainThread:14:41:13.158 bleak_wrapper.py                          120 INFO     | Scanning for GoPro [A-Z0-9]{4} bluetooth devices...
    MainThread:14:41:13.185 manager.py                                323 DEBUG    | initial properties: {'/org/bluez': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.AgentManager1': {}, 'org.bluez.ProfileManager1': {}, 'org.bluez.HealthManager1': {}}, '/org/bluez/hci0': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.Adapter1': {'Address': '2C:CF:67:14:FF:E4', 'AddressType': 'public', 'Name': 'raspberrypi', 'Alias': 'raspberrypi', 'Class': 7077888, 'Powered': True, 'Discoverable': False, 'DiscoverableTimeout': 180, 'Pairable': True, 'PairableTimeout': 0, 'Discovering': False, 'UUIDs': ['0000110e-0000-1000-8000-00805f9b34fb', '0000111f-0000-1000-8000-00805f9b34fb', '00001200-0000-1000-8000-00805f9b34fb', '0000110b-0000-1000-8000-00805f9b34fb', '0000110a-0000-1000-8000-00805f9b34fb', '0000110c-0000-1000-8000-00805f9b34fb', '00001800-0000-1000-8000-00805f9b34fb', '00001801-0000-1000-8000-00805f9b34fb', '0000180a-0000-1000-8000-00805f9b34fb', '0000111e-0000-1000-8000-00805f9b34fb'], 'Modalias': 'usb:v1D6Bp0246d0542', 'Roles': ['central', 'peripheral']}, 'org.freedesktop.DBus.Properties': {}, 'org.bluez.GattManager1': {}, 'org.bluez.Media1': {'SupportedUUIDs': ['0000110a-0000-1000-8000-00805f9b34fb', '0000110b-0000-1000-8000-00805f9b34fb']}, 'org.bluez.NetworkServer1': {}, 'org.bluez.LEAdvertisingManager1': {'ActiveInstances': 0, 'SupportedInstances': 5, 'SupportedIncludes': ['tx-power', 'appearance', 'local-name']}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.Device1': {'Address': 'EB:95:65:61:51:80', 'AddressType': 'random', 'Name': 'GoPro 1630', 'Alias': 'GoPro 1630', 'Appearance': 128, 'Icon': 'computer', 'Paired': True, 'Bonded': True, 'Trusted': False, 'Blocked': False, 'LegacyPairing': False, 'Connected': False, 'UUIDs': ['00001800-0000-1000-8000-00805f9b34fb', '00001801-0000-1000-8000-00805f9b34fb', '00001804-0000-1000-8000-00805f9b34fb', '0000180a-0000-1000-8000-00805f9b34fb', '0000180f-0000-1000-8000-00805f9b34fb', '0000fea6-0000-1000-8000-00805f9b34fb', 'b5f90001-aa8d-11e3-9046-0002a5d5c51b', 'b5f90080-aa8d-11e3-9046-0002a5d5c51b', 'b5f90090-aa8d-11e3-9046-0002a5d5c51b'], 'Adapter': '/org/bluez/hci0', 'ManufacturerData': {754: bytearray(b'\x02\x017?\x00\x80Qae\x95\xeb\x0f')}, 'ServicesResolved': False}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service004c': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattService1': {'UUID': 'b5f90080-aa8d-11e3-9046-0002a5d5c51b', 'Device': '/org/bluez/hci0/dev_EB_95_65_61_51_80', 'Primary': True, 'Includes': []}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service004c/char0055': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': 'b5f90084-aa8d-11e3-9046-0002a5d5c51b', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service004c', 'Value': bytearray(b''), 'Notifying': True, 'Flags': ['notify'], 'NotifyAcquired': False}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service004c/char0055/desc0057': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattDescriptor1': {'UUID': '00002902-0000-1000-8000-00805f9b34fb', 'Characteristic': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service004c/char0055', 'Value': bytearray(b'\x00\x00')}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service004c/char0052': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': 'b5f90083-aa8d-11e3-9046-0002a5d5c51b', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service004c', 'Value': bytearray(b''), 'Notifying': True, 'Flags': ['notify'], 'NotifyAcquired': False}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service004c/char0052/desc0054': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattDescriptor1': {'UUID': '00002902-0000-1000-8000-00805f9b34fb', 'Characteristic': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service004c/char0052', 'Value': bytearray(b'\x00\x00')}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service004c/char0050': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': 'b5f90082-aa8d-11e3-9046-0002a5d5c51b', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service004c', 'Value': bytearray(b''), 'Flags': ['write']}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service004c/char004d': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': 'b5f90081-aa8d-11e3-9046-0002a5d5c51b', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service004c', 'Value': bytearray(b''), 'Notifying': True, 'Flags': ['notify'], 'NotifyAcquired': False}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service004c/char004d/desc004f': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattDescriptor1': {'UUID': '00002902-0000-1000-8000-00805f9b34fb', 'Characteristic': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service004c/char004d', 'Value': bytearray(b'\x00\x00')}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0046': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattService1': {'UUID': 'b5f90090-aa8d-11e3-9046-0002a5d5c51b', 'Device': '/org/bluez/hci0/dev_EB_95_65_61_51_80', 'Primary': True, 'Includes': []}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0046/char0049': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': 'b5f90092-aa8d-11e3-9046-0002a5d5c51b', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0046', 'Value': bytearray(b''), 'Notifying': True, 'Flags': ['notify'], 'NotifyAcquired': False}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0046/char0049/desc004b': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattDescriptor1': {'UUID': '00002902-0000-1000-8000-00805f9b34fb', 'Characteristic': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0046/char0049', 'Value': bytearray(b'\x00\x00')}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0046/char0047': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': 'b5f90091-aa8d-11e3-9046-0002a5d5c51b', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0046', 'Value': bytearray(b''), 'Flags': ['write']}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattService1': {'UUID': '0000fea6-0000-1000-8000-00805f9b34fb', 'Device': '/org/bluez/hci0/dev_EB_95_65_61_51_80', 'Primary': True, 'Includes': []}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0043': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': 'b5f90079-aa8d-11e3-9046-0002a5d5c51b', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031', 'Value': bytearray(b''), 'Notifying': True, 'Flags': ['notify'], 'NotifyAcquired': False}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0043/desc0045': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattDescriptor1': {'UUID': '00002902-0000-1000-8000-00805f9b34fb', 'Characteristic': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0043', 'Value': bytearray(b'\x00\x00')}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0041': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': 'b5f90078-aa8d-11e3-9046-0002a5d5c51b', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031', 'Value': bytearray(b''), 'Flags': ['write']}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char003e': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': 'b5f90077-aa8d-11e3-9046-0002a5d5c51b', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031', 'Value': bytearray(b'\x08\x93\x00\x08\x01\x00\n\x01\x00'), 'Notifying': True, 'Flags': ['notify'], 'NotifyAcquired': False}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char003e/desc0040': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattDescriptor1': {'UUID': '00002902-0000-1000-8000-00805f9b34fb', 'Characteristic': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char003e', 'Value': bytearray(b'\x00\x00')}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char003c': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': 'b5f90076-aa8d-11e3-9046-0002a5d5c51b', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031', 'Value': bytearray(b''), 'Flags': ['write']}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0039': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': 'b5f90075-aa8d-11e3-9046-0002a5d5c51b', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031', 'Value': bytearray(b''), 'Notifying': True, 'Flags': ['notify'], 'NotifyAcquired': False}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0039/desc003b': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattDescriptor1': {'UUID': '00002902-0000-1000-8000-00805f9b34fb', 'Characteristic': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0039', 'Value': bytearray(b'\x00\x00')}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0037': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': 'b5f90074-aa8d-11e3-9046-0002a5d5c51b', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031', 'Value': bytearray(b''), 'Flags': ['write']}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0034': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': 'b5f90073-aa8d-11e3-9046-0002a5d5c51b', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031', 'Value': bytearray(b'\x02\x17\x00'), 'Notifying': True, 'Flags': ['notify'], 'NotifyAcquired': False}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0034/desc0036': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattDescriptor1': {'UUID': '00002902-0000-1000-8000-00805f9b34fb', 'Characteristic': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0034', 'Value': bytearray(b'\x00\x00')}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0032': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': 'b5f90072-aa8d-11e3-9046-0002a5d5c51b', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031', 'Value': bytearray(b''), 'Flags': ['write']}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0025': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattService1': {'UUID': 'b5f90001-aa8d-11e3-9046-0002a5d5c51b', 'Device': '/org/bluez/hci0/dev_EB_95_65_61_51_80', 'Primary': True, 'Includes': []}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0025/char002f': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': 'b5f90006-aa8d-11e3-9046-0002a5d5c51b', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0025', 'Value': bytearray(b''), 'Flags': ['read']}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0025/char002c': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': 'b5f90005-aa8d-11e3-9046-0002a5d5c51b', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0025', 'Value': bytearray(b''), 'Notifying': False, 'Flags': ['read', 'indicate']}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0025/char002c/desc002e': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattDescriptor1': {'UUID': '00002902-0000-1000-8000-00805f9b34fb', 'Characteristic': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0025/char002c', 'Value': bytearray(b'\x00\x00')}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0025/char002a': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': 'b5f90004-aa8d-11e3-9046-0002a5d5c51b', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0025', 'Value': bytearray(b''), 'Flags': ['write']}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0025/char0028': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': 'b5f90003-aa8d-11e3-9046-0002a5d5c51b', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0025', 'Value': bytearray(b'NPc-hg6-S5S'), 'Flags': ['read', 'write']}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0025/char0026': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': 'b5f90002-aa8d-11e3-9046-0002a5d5c51b', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0025', 'Value': bytearray(b'GoPro Hero 9 Angkasa'), 'Flags': ['read', 'write']}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0012': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattService1': {'UUID': '0000180a-0000-1000-8000-00805f9b34fb', 'Device': '/org/bluez/hci0/dev_EB_95_65_61_51_80', 'Primary': True, 'Includes': []}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0012/char0023': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': '00002a50-0000-1000-8000-00805f9b34fb', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0012', 'Value': bytearray(b''), 'Flags': ['read']}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0012/char0021': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': '00002a2a-0000-1000-8000-00805f9b34fb', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0012', 'Value': bytearray(b''), 'Flags': ['read']}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0012/char001f': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': '00002a23-0000-1000-8000-00805f9b34fb', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0012', 'Value': bytearray(b''), 'Flags': ['read']}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0012/char001d': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': '00002a28-0000-1000-8000-00805f9b34fb', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0012', 'Value': bytearray(b''), 'Flags': ['read']}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0012/char001b': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': '00002a26-0000-1000-8000-00805f9b34fb', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0012', 'Value': bytearray(b''), 'Flags': ['read']}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0012/char0019': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': '00002a27-0000-1000-8000-00805f9b34fb', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0012', 'Value': bytearray(b''), 'Flags': ['read']}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0012/char0017': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': '00002a25-0000-1000-8000-00805f9b34fb', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0012', 'Value': bytearray(b''), 'Flags': ['read']}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0012/char0015': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': '00002a24-0000-1000-8000-00805f9b34fb', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0012', 'Value': bytearray(b''), 'Flags': ['read']}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0012/char0013': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': '00002a29-0000-1000-8000-00805f9b34fb', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0012', 'Value': bytearray(b''), 'Flags': ['read']}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service000e': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattService1': {'UUID': '0000180f-0000-1000-8000-00805f9b34fb', 'Device': '/org/bluez/hci0/dev_EB_95_65_61_51_80', 'Primary': True, 'Includes': []}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service000e/char000f': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': '00002a19-0000-1000-8000-00805f9b34fb', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service000e', 'Value': bytearray(b''), 'Notifying': True, 'Flags': ['read', 'notify'], 'NotifyAcquired': False}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service000e/char000f/desc0011': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattDescriptor1': {'UUID': '00002902-0000-1000-8000-00805f9b34fb', 'Characteristic': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service000e/char000f', 'Value': bytearray(b'\x01\x00')}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service000b': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattService1': {'UUID': '00001804-0000-1000-8000-00805f9b34fb', 'Device': '/org/bluez/hci0/dev_EB_95_65_61_51_80', 'Primary': True, 'Includes': []}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service000b/char000c': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': '00002a07-0000-1000-8000-00805f9b34fb', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service000b', 'Value': bytearray(b''), 'Flags': ['read']}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0001': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattService1': {'UUID': '00001801-0000-1000-8000-00805f9b34fb', 'Device': '/org/bluez/hci0/dev_EB_95_65_61_51_80', 'Primary': True, 'Includes': []}, 'org.freedesktop.DBus.Properties': {}}}
@@ -34,6 +49,30 @@ eth0           ethernet  unavailable             --
    MainThread:14:41:18.685 bleak_wrapper.py                          257 DEBUG    | Attempting to pair...
    MainThread:14:41:18.687 bleak_wrapper.py                          262 INFO     | Pairing with bluetoothctl
    MainThread:14:41:18.813 bleak_wrapper.py                          292 DEBUG    | [?2004hWaiting to connect to bluetoothd...[22P[0;94m[bluetooth][0m# [K[0;94m[GoPro 1630][0m# [KAgent registered
+=======
+   MainThread:10:53:17.212 wireless.py                                98 DEBUG    | Wifi setup. Using [WifiCli] driver::[wlan0] interface
+   MainThread:10:53:17.212 bleak_wrapper.py                          120 INFO     | Scanning for GoPro [A-Z0-9]{4} bluetooth devices...
+   MainThread:10:53:17.238 manager.py                                323 DEBUG    | initial properties: {'/org/bluez': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.AgentManager1': {}, 'org.bluez.ProfileManager1': {}, 'org.bluez.HealthManager1': {}}, '/org/bluez/hci0': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.Adapter1': {'Address': '2C:CF:67:14:FF:E4', 'AddressType': 'public', 'Name': 'raspberrypi', 'Alias': 'raspberrypi', 'Class': 7077888, 'Powered': True, 'Discoverable': False, 'DiscoverableTimeout': 180, 'Pairable': True, 'PairableTimeout': 0, 'Discovering': False, 'UUIDs': ['0000110e-0000-1000-8000-00805f9b34fb', '0000111f-0000-1000-8000-00805f9b34fb', '00001200-0000-1000-8000-00805f9b34fb', '0000110b-0000-1000-8000-00805f9b34fb', '0000110a-0000-1000-8000-00805f9b34fb', '0000110c-0000-1000-8000-00805f9b34fb', '00001800-0000-1000-8000-00805f9b34fb', '00001801-0000-1000-8000-00805f9b34fb', '0000180a-0000-1000-8000-00805f9b34fb', '0000111e-0000-1000-8000-00805f9b34fb'], 'Modalias': 'usb:v1D6Bp0246d0542', 'Roles': ['central', 'peripheral']}, 'org.freedesktop.DBus.Properties': {}, 'org.bluez.GattManager1': {}, 'org.bluez.Media1': {'SupportedUUIDs': ['0000110a-0000-1000-8000-00805f9b34fb', '0000110b-0000-1000-8000-00805f9b34fb']}, 'org.bluez.NetworkServer1': {}, 'org.bluez.LEAdvertisingManager1': {'ActiveInstances': 0, 'SupportedInstances': 5, 'SupportedIncludes': ['tx-power', 'appearance', 'local-name']}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.Device1': {'Address': 'EB:95:65:61:51:80', 'AddressType': 'random', 'Name': 'GoPro 1630', 'Alias': 'GoPro 1630', 'Appearance': 128, 'Icon': 'computer', 'Paired': True, 'Bonded': True, 'Trusted': False, 'Blocked': False, 'LegacyPairing': False, 'Connected': False, 'UUIDs': ['00001800-0000-1000-8000-00805f9b34fb', '00001801-0000-1000-8000-00805f9b34fb', '00001804-0000-1000-8000-00805f9b34fb', '0000180a-0000-1000-8000-00805f9b34fb', '0000180f-0000-1000-8000-00805f9b34fb', '0000fea6-0000-1000-8000-00805f9b34fb', 'b5f90001-aa8d-11e3-9046-0002a5d5c51b', 'b5f90080-aa8d-11e3-9046-0002a5d5c51b', 'b5f90090-aa8d-11e3-9046-0002a5d5c51b'], 'Adapter': '/org/bluez/hci0', 'ManufacturerData': {754: bytearray(b'\x02\x037?\x00\x80Qae\x95\xeb\x0c')}, 'ServicesResolved': False}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service004c': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattService1': {'UUID': 'b5f90080-aa8d-11e3-9046-0002a5d5c51b', 'Device': '/org/bluez/hci0/dev_EB_95_65_61_51_80', 'Primary': True, 'Includes': []}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service004c/char0055': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': 'b5f90084-aa8d-11e3-9046-0002a5d5c51b', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service004c', 'Value': bytearray(b''), 'Notifying': True, 'Flags': ['notify'], 'NotifyAcquired': False}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service004c/char0055/desc0057': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattDescriptor1': {'UUID': '00002902-0000-1000-8000-00805f9b34fb', 'Characteristic': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service004c/char0055', 'Value': bytearray(b'\x01\x00')}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service004c/char0052': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': 'b5f90083-aa8d-11e3-9046-0002a5d5c51b', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service004c', 'Value': bytearray(b''), 'Notifying': True, 'Flags': ['notify'], 'NotifyAcquired': False}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service004c/char0052/desc0054': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattDescriptor1': {'UUID': '00002902-0000-1000-8000-00805f9b34fb', 'Characteristic': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service004c/char0052', 'Value': bytearray(b'\x01\x00')}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service004c/char0050': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': 'b5f90082-aa8d-11e3-9046-0002a5d5c51b', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service004c', 'Value': bytearray(b''), 'Flags': ['write']}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service004c/char004d': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': 'b5f90081-aa8d-11e3-9046-0002a5d5c51b', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service004c', 'Value': bytearray(b''), 'Notifying': True, 'Flags': ['notify'], 'NotifyAcquired': False}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service004c/char004d/desc004f': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattDescriptor1': {'UUID': '00002902-0000-1000-8000-00805f9b34fb', 'Characteristic': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service004c/char004d', 'Value': bytearray(b'\x01\x00')}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0046': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattService1': {'UUID': 'b5f90090-aa8d-11e3-9046-0002a5d5c51b', 'Device': '/org/bluez/hci0/dev_EB_95_65_61_51_80', 'Primary': True, 'Includes': []}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0046/char0049': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': 'b5f90092-aa8d-11e3-9046-0002a5d5c51b', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0046', 'Value': bytearray(b''), 'Notifying': True, 'Flags': ['notify'], 'NotifyAcquired': False}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0046/char0049/desc004b': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattDescriptor1': {'UUID': '00002902-0000-1000-8000-00805f9b34fb', 'Characteristic': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0046/char0049', 'Value': bytearray(b'\x01\x00')}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0046/char0047': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': 'b5f90091-aa8d-11e3-9046-0002a5d5c51b', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0046', 'Value': bytearray(b''), 'Flags': ['write']}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattService1': {'UUID': '0000fea6-0000-1000-8000-00805f9b34fb', 'Device': '/org/bluez/hci0/dev_EB_95_65_61_51_80', 'Primary': True, 'Includes': []}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0043': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': 'b5f90079-aa8d-11e3-9046-0002a5d5c51b', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031', 'Value': bytearray(b''), 'Notifying': True, 'Flags': ['notify'], 'NotifyAcquired': False}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0043/desc0045': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattDescriptor1': {'UUID': '00002902-0000-1000-8000-00805f9b34fb', 'Characteristic': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0043', 'Value': bytearray(b'\x01\x00')}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0041': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': 'b5f90078-aa8d-11e3-9046-0002a5d5c51b', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031', 'Value': bytearray(b''), 'Flags': ['write']}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char003e': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': 'b5f90077-aa8d-11e3-9046-0002a5d5c51b', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031', 'Value': bytearray(b'\x08\x93\x00\x08\x01\x00\n\x01\x00'), 'Notifying': True, 'Flags': ['notify'], 'NotifyAcquired': False}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char003e/desc0040': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattDescriptor1': {'UUID': '00002902-0000-1000-8000-00805f9b34fb', 'Characteristic': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char003e', 'Value': bytearray(b'\x01\x00')}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char003c': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': 'b5f90076-aa8d-11e3-9046-0002a5d5c51b', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031', 'Value': bytearray(b''), 'Flags': ['write']}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0039': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': 'b5f90075-aa8d-11e3-9046-0002a5d5c51b', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031', 'Value': bytearray(b'\x02[\x00'), 'Notifying': True, 'Flags': ['notify'], 'NotifyAcquired': False}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0039/desc003b': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattDescriptor1': {'UUID': '00002902-0000-1000-8000-00805f9b34fb', 'Characteristic': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0039', 'Value': bytearray(b'\x01\x00')}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0037': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': 'b5f90074-aa8d-11e3-9046-0002a5d5c51b', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031', 'Value': bytearray(b''), 'Flags': ['write']}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0034': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': 'b5f90073-aa8d-11e3-9046-0002a5d5c51b', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031', 'Value': bytearray(b'\x02\x17\x00'), 'Notifying': True, 'Flags': ['notify'], 'NotifyAcquired': False}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0034/desc0036': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattDescriptor1': {'UUID': '00002902-0000-1000-8000-00805f9b34fb', 'Characteristic': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0034', 'Value': bytearray(b'\x01\x00')}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0032': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': 'b5f90072-aa8d-11e3-9046-0002a5d5c51b', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031', 'Value': bytearray(b''), 'Flags': ['write']}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0025': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattService1': {'UUID': 'b5f90001-aa8d-11e3-9046-0002a5d5c51b', 'Device': '/org/bluez/hci0/dev_EB_95_65_61_51_80', 'Primary': True, 'Includes': []}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0025/char002f': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': 'b5f90006-aa8d-11e3-9046-0002a5d5c51b', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0025', 'Value': bytearray(b''), 'Flags': ['read']}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0025/char002c': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': 'b5f90005-aa8d-11e3-9046-0002a5d5c51b', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0025', 'Value': bytearray(b''), 'Notifying': False, 'Flags': ['read', 'indicate']}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0025/char002c/desc002e': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattDescriptor1': {'UUID': '00002902-0000-1000-8000-00805f9b34fb', 'Characteristic': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0025/char002c', 'Value': bytearray(b'\x00\x00')}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0025/char002a': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': 'b5f90004-aa8d-11e3-9046-0002a5d5c51b', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0025', 'Value': bytearray(b''), 'Flags': ['write']}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0025/char0028': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': 'b5f90003-aa8d-11e3-9046-0002a5d5c51b', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0025', 'Value': bytearray(b'NPc-hg6-S5S'), 'Flags': ['read', 'write']}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0025/char0026': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': 'b5f90002-aa8d-11e3-9046-0002a5d5c51b', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0025', 'Value': bytearray(b'GoPro Hero 9 Angkasa'), 'Flags': ['read', 'write']}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0012': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattService1': {'UUID': '0000180a-0000-1000-8000-00805f9b34fb', 'Device': '/org/bluez/hci0/dev_EB_95_65_61_51_80', 'Primary': True, 'Includes': []}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0012/char0023': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': '00002a50-0000-1000-8000-00805f9b34fb', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0012', 'Value': bytearray(b''), 'Flags': ['read']}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0012/char0021': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': '00002a2a-0000-1000-8000-00805f9b34fb', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0012', 'Value': bytearray(b''), 'Flags': ['read']}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0012/char001f': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': '00002a23-0000-1000-8000-00805f9b34fb', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0012', 'Value': bytearray(b''), 'Flags': ['read']}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0012/char001d': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': '00002a28-0000-1000-8000-00805f9b34fb', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0012', 'Value': bytearray(b''), 'Flags': ['read']}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0012/char001b': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': '00002a26-0000-1000-8000-00805f9b34fb', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0012', 'Value': bytearray(b''), 'Flags': ['read']}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0012/char0019': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': '00002a27-0000-1000-8000-00805f9b34fb', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0012', 'Value': bytearray(b''), 'Flags': ['read']}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0012/char0017': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': '00002a25-0000-1000-8000-00805f9b34fb', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0012', 'Value': bytearray(b''), 'Flags': ['read']}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0012/char0015': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': '00002a24-0000-1000-8000-00805f9b34fb', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0012', 'Value': bytearray(b''), 'Flags': ['read']}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0012/char0013': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': '00002a29-0000-1000-8000-00805f9b34fb', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0012', 'Value': bytearray(b''), 'Flags': ['read']}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service000e': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattService1': {'UUID': '0000180f-0000-1000-8000-00805f9b34fb', 'Device': '/org/bluez/hci0/dev_EB_95_65_61_51_80', 'Primary': True, 'Includes': []}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service000e/char000f': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': '00002a19-0000-1000-8000-00805f9b34fb', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service000e', 'Value': bytearray(b'\x00'), 'Notifying': True, 'Flags': ['read', 'notify'], 'NotifyAcquired': False}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service000e/char000f/desc0011': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattDescriptor1': {'UUID': '00002902-0000-1000-8000-00805f9b34fb', 'Characteristic': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service000e/char000f', 'Value': bytearray(b'\x01\x00')}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service000b': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattService1': {'UUID': '00001804-0000-1000-8000-00805f9b34fb', 'Device': '/org/bluez/hci0/dev_EB_95_65_61_51_80', 'Primary': True, 'Includes': []}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service000b/char000c': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattCharacteristic1': {'UUID': '00002a07-0000-1000-8000-00805f9b34fb', 'Service': '/org/bluez/hci0/dev_EB_95_65_61_51_80/service000b', 'Value': bytearray(b''), 'Flags': ['read']}, 'org.freedesktop.DBus.Properties': {}}, '/org/bluez/hci0/dev_EB_95_65_61_51_80/service0001': {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.GattService1': {'UUID': '00001801-0000-1000-8000-00805f9b34fb', 'Device': '/org/bluez/hci0/dev_EB_95_65_61_51_80', 'Primary': True, 'Includes': []}, 'org.freedesktop.DBus.Properties': {}}}
+   MainThread:10:53:17.289 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0): ['org.bluez.Adapter1', {'Discovering': <dbus_fast.signature.Variant ('b', True)>}, []]
+   MainThread:10:53:17.361 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80): ['org.bluez.Device1', {'RSSI': <dbus_fast.signature.Variant ('n', -46)>, 'ManufacturerData': <dbus_fast.signature.Variant ('a{qv}', {754: <dbus_fast.signature.Variant ('ay', bytearray(b'\x02\x017?\x00\x80Qae\x95\xeb\x0f'))>})>}, []]
+   MainThread:10:53:17.363 bleak_wrapper.py                          133 INFO     | 	Discovered: EB:95:65:61:51:80: GoPro 1630
+   MainThread:10:53:17.367 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80): ['org.bluez.Device1', {}, ['RSSI']]
+   MainThread:10:53:17.369 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0): ['org.bluez.Adapter1', {'Discovering': <dbus_fast.signature.Variant ('b', False)>}, []]
+   MainThread:10:53:17.371 bleak_wrapper.py                          146 INFO     | Found 1 matching devices.
+   MainThread:10:53:17.372 client.py                                 106 INFO     | Establishing the BLE connection
+   MainThread:10:53:17.372 bleak_wrapper.py                          213 INFO     | Establishing BLE connection to EB:95:65:61:51:80: GoPro 1630...
+   MainThread:10:53:17.374 client.py                                 116 DEBUG    | Connecting to device @ EB:95:65:61:51:80
+   MainThread:10:53:17.380 client.py                                 206 DEBUG    | Connecting to BlueZ path /org/bluez/hci0/dev_EB_95_65_61_51_80
+   MainThread:10:53:17.832 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80): ['org.bluez.Device1', {'Connected': <dbus_fast.signature.Variant ('b', True)>}, []]
+   MainThread:10:53:19.646 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service000e/char000f): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x00'))>}, []]
+   MainThread:10:53:19.649 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service000e/char000f): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x00'))>}, []]
+   MainThread:10:53:19.650 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service000e/char000f): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x00'))>}, []]
+   MainThread:10:53:19.938 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.ObjectManager.InterfacesAdded (/): ['/org/bluez/hci0/dev_EB_95_65_61_51_80', {'org.bluez.Battery1': {}}]
+   MainThread:10:53:20.378 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80): ['org.bluez.Device1', {'ServicesResolved': <dbus_fast.signature.Variant ('b', True)>}, []]
+   MainThread:10:53:20.380 bleak_wrapper.py                          257 DEBUG    | Attempting to pair...
+   MainThread:10:53:20.380 bleak_wrapper.py                          262 INFO     | Pairing with bluetoothctl
+   MainThread:10:53:20.502 bleak_wrapper.py                          292 DEBUG    | [?2004hWaiting to connect to bluetoothd...[22P[0;94m[bluetooth][0m# [K[0;94m[GoPro 1630][0m# [KAgent registered
+>>>>>>> 84b41b4 (media list)
 [0;94m[GoPro 1630][0m# version
 version
 [?2004lVersion 5.66
@@ -41,6 +80,7 @@ version
 devices Paired
 [?2004lDevice EB:95:65:61:51:80 GoPro 1630
 [?2004h[0;94m[GoPro 1630][0m# [K
+<<<<<<< HEAD
    MainThread:14:41:18.814 bleak_wrapper.py                          300 DEBUG    | Pairing complete!
    MainThread:14:41:18.914 bleak_wrapper.py                          358 INFO     | Discovering characteristics...
    MainThread:14:41:18.916 bleak_wrapper.py                          366 DEBUG    | [Service] Tx Power Service
@@ -115,6 +155,82 @@ devices Paired
    MainThread:14:41:21.054 bleak_wrapper.py                          325 DEBUG    | Enabling notification on char b5f90083-aa8d-11e3-9046-0002a5d5c51b
    MainThread:14:41:21.054 bleak_wrapper.py                          327 INFO     | Done enabling notifications
    MainThread:14:41:21.056 gopro_wireless.py                         716 INFO     | 
+=======
+   MainThread:10:53:20.502 bleak_wrapper.py                          300 DEBUG    | Pairing complete!
+   MainThread:10:53:20.603 bleak_wrapper.py                          358 INFO     | Discovering characteristics...
+   MainThread:10:53:20.604 bleak_wrapper.py                          366 DEBUG    | [Service] Wifi Access Point Service
+   MainThread:10:53:20.604 bleak_wrapper.py                          398 DEBUG    | 	[Characteristic] Wifi Power @ handle 42: WRITE_YES_RSP
+   MainThread:10:53:20.605 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.ObjectManager.InterfacesAdded (/): ['/org/bluez/agent', {'org.freedesktop.DBus.Introspectable': {}, 'org.bluez.Agent1': {}}]
+   MainThread:10:53:20.669 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0025/char002c/desc002e): ['org.bluez.GattDescriptor1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x00\x00'))>}, []]
+   MainThread:10:53:20.672 client.py                                 814 DEBUG    | Read Descriptor 46 | /org/bluez/hci0/dev_EB_95_65_61_51_80/service0025/char002c/desc002e: bytearray(b'\x00\x00')
+   MainThread:10:53:20.673 bleak_wrapper.py                          398 DEBUG    | 	[Characteristic] Wifi State @ handle 44: READ|INDICATE
+   MainThread:10:53:20.673 bleak_wrapper.py                          398 DEBUG    | 	[Characteristic] CSI Password @ handle 47: READ
+   MainThread:10:53:20.673 bleak_wrapper.py                          398 DEBUG    | 	[Characteristic] Wifi AP Password @ handle 40: READ|WRITE_YES_RSP
+   MainThread:10:53:20.673 bleak_wrapper.py                          398 DEBUG    | 	[Characteristic] Wifi AP SSID @ handle 38: READ|WRITE_YES_RSP
+   MainThread:10:53:20.673 bleak_wrapper.py                          366 DEBUG    | [Service] Control and Query Service
+   MainThread:10:53:20.816 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char003e/desc0040): ['org.bluez.GattDescriptor1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x01\x00'))>}, []]
+   MainThread:10:53:20.818 client.py                                 814 DEBUG    | Read Descriptor 64 | /org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char003e/desc0040: bytearray(b'\x01\x00')
+   MainThread:10:53:20.819 bleak_wrapper.py                          398 DEBUG    | 	[Characteristic] Query Response @ handle 62: NOTIFY
+   MainThread:10:53:20.913 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0043/desc0045): ['org.bluez.GattDescriptor1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x01\x00'))>}, []]
+   MainThread:10:53:20.915 client.py                                 814 DEBUG    | Read Descriptor 69 | /org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0043/desc0045: bytearray(b'\x01\x00')
+   MainThread:10:53:20.917 bleak_wrapper.py                          398 DEBUG    | 	[Characteristic] Sensor Response @ handle 67: NOTIFY
+   MainThread:10:53:20.917 bleak_wrapper.py                          398 DEBUG    | 	[Characteristic] Settings @ handle 55: WRITE_YES_RSP
+   MainThread:10:53:21.011 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0034/desc0036): ['org.bluez.GattDescriptor1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x01\x00'))>}, []]
+   MainThread:10:53:21.013 client.py                                 814 DEBUG    | Read Descriptor 54 | /org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0034/desc0036: bytearray(b'\x01\x00')
+   MainThread:10:53:21.014 bleak_wrapper.py                          398 DEBUG    | 	[Characteristic] Command Response @ handle 52: NOTIFY
+   MainThread:10:53:21.014 bleak_wrapper.py                          398 DEBUG    | 	[Characteristic] Query @ handle 60: WRITE_YES_RSP
+   MainThread:10:53:21.108 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0039/desc003b): ['org.bluez.GattDescriptor1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x01\x00'))>}, []]
+   MainThread:10:53:21.111 client.py                                 814 DEBUG    | Read Descriptor 59 | /org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0039/desc003b: bytearray(b'\x01\x00')
+   MainThread:10:53:21.113 bleak_wrapper.py                          398 DEBUG    | 	[Characteristic] Settings Response @ handle 57: NOTIFY
+   MainThread:10:53:21.113 bleak_wrapper.py                          398 DEBUG    | 	[Characteristic] Sensor @ handle 65: WRITE_YES_RSP
+   MainThread:10:53:21.113 bleak_wrapper.py                          398 DEBUG    | 	[Characteristic] Command @ handle 50: WRITE_YES_RSP
+   MainThread:10:53:21.113 bleak_wrapper.py                          366 DEBUG    | [Service] Unknown Service
+   MainThread:10:53:21.206 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service004c/char0055/desc0057): ['org.bluez.GattDescriptor1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x01\x00'))>}, []]
+   MainThread:10:53:21.208 client.py                                 814 DEBUG    | Read Descriptor 87 | /org/bluez/hci0/dev_EB_95_65_61_51_80/service004c/char0055/desc0057: bytearray(b'\x01\x00')
+   MainThread:10:53:21.210 bleak_wrapper.py                          398 DEBUG    | 	[Characteristic] Internal 84 @ handle 85: NOTIFY
+   MainThread:10:53:21.352 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service004c/char004d/desc004f): ['org.bluez.GattDescriptor1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x01\x00'))>}, []]
+   MainThread:10:53:21.355 client.py                                 814 DEBUG    | Read Descriptor 79 | /org/bluez/hci0/dev_EB_95_65_61_51_80/service004c/char004d/desc004f: bytearray(b'\x01\x00')
+   MainThread:10:53:21.356 bleak_wrapper.py                          398 DEBUG    | 	[Characteristic] Internal 81 @ handle 77: NOTIFY
+   MainThread:10:53:21.450 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service004c/char0052/desc0054): ['org.bluez.GattDescriptor1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x01\x00'))>}, []]
+   MainThread:10:53:21.452 client.py                                 814 DEBUG    | Read Descriptor 84 | /org/bluez/hci0/dev_EB_95_65_61_51_80/service004c/char0052/desc0054: bytearray(b'\x01\x00')
+   MainThread:10:53:21.454 bleak_wrapper.py                          398 DEBUG    | 	[Characteristic] Internal 83 @ handle 82: NOTIFY
+   MainThread:10:53:21.454 bleak_wrapper.py                          398 DEBUG    | 	[Characteristic] Internal 82 @ handle 80: WRITE_YES_RSP
+   MainThread:10:53:21.454 bleak_wrapper.py                          366 DEBUG    | [Service] Battery Service
+   MainThread:10:53:21.547 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service000e/char000f/desc0011): ['org.bluez.GattDescriptor1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x01\x00'))>}, []]
+   MainThread:10:53:21.550 client.py                                 814 DEBUG    | Read Descriptor 17 | /org/bluez/hci0/dev_EB_95_65_61_51_80/service000e/char000f/desc0011: bytearray(b'\x01\x00')
+   MainThread:10:53:21.551 bleak_wrapper.py                          398 DEBUG    | 	[Characteristic] Battery Level @ handle 15: READ|NOTIFY
+   MainThread:10:53:21.551 bleak_wrapper.py                          366 DEBUG    | [Service] Camera Management Service
+   MainThread:10:53:21.645 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0046/char0049/desc004b): ['org.bluez.GattDescriptor1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x01\x00'))>}, []]
+   MainThread:10:53:21.647 client.py                                 814 DEBUG    | Read Descriptor 75 | /org/bluez/hci0/dev_EB_95_65_61_51_80/service0046/char0049/desc004b: bytearray(b'\x01\x00')
+   MainThread:10:53:21.649 bleak_wrapper.py                          398 DEBUG    | 	[Characteristic] Camera Management Response @ handle 73: NOTIFY
+   MainThread:10:53:21.649 bleak_wrapper.py                          398 DEBUG    | 	[Characteristic] Camera Management @ handle 71: WRITE_YES_RSP
+   MainThread:10:53:21.649 bleak_wrapper.py                          366 DEBUG    | [Service] Device Information Service
+   MainThread:10:53:21.649 bleak_wrapper.py                          398 DEBUG    | 	[Characteristic] Certification Data @ handle 33: READ
+   MainThread:10:53:21.649 bleak_wrapper.py                          398 DEBUG    | 	[Characteristic] Model Number @ handle 21: READ
+   MainThread:10:53:21.649 bleak_wrapper.py                          398 DEBUG    | 	[Characteristic] Manufacturer Name @ handle 19: READ
+   MainThread:10:53:21.649 bleak_wrapper.py                          398 DEBUG    | 	[Characteristic] System ID @ handle 31: READ
+   MainThread:10:53:21.649 bleak_wrapper.py                          398 DEBUG    | 	[Characteristic] Hardware Revision @ handle 25: READ
+   MainThread:10:53:21.649 bleak_wrapper.py                          398 DEBUG    | 	[Characteristic] Serial Number @ handle 23: READ
+   MainThread:10:53:21.649 bleak_wrapper.py                          398 DEBUG    | 	[Characteristic] Firmware Revision @ handle 27: READ
+   MainThread:10:53:21.649 bleak_wrapper.py                          398 DEBUG    | 	[Characteristic] Software Revision @ handle 29: READ
+   MainThread:10:53:21.649 bleak_wrapper.py                          398 DEBUG    | 	[Characteristic] PNP ID @ handle 35: READ
+   MainThread:10:53:21.649 bleak_wrapper.py                          366 DEBUG    | [Service] Generic Attribute Service
+   MainThread:10:53:21.649 bleak_wrapper.py                          366 DEBUG    | [Service] Tx Power Service
+   MainThread:10:53:21.649 bleak_wrapper.py                          398 DEBUG    | 	[Characteristic] Tx Power Level @ handle 12: READ
+   MainThread:10:53:21.649 bleak_wrapper.py                          403 INFO     | Done discovering characteristics!
+   MainThread:10:53:21.651 bleak_wrapper.py                          321 INFO     | Enabling notifications...
+   MainThread:10:53:21.652 bleak_wrapper.py                          325 DEBUG    | Enabling notification on char b5f90077-aa8d-11e3-9046-0002a5d5c51b
+   MainThread:10:53:21.652 bleak_wrapper.py                          325 DEBUG    | Enabling notification on char b5f90079-aa8d-11e3-9046-0002a5d5c51b
+   MainThread:10:53:21.653 bleak_wrapper.py                          325 DEBUG    | Enabling notification on char b5f90073-aa8d-11e3-9046-0002a5d5c51b
+   MainThread:10:53:21.653 bleak_wrapper.py                          325 DEBUG    | Enabling notification on char b5f90075-aa8d-11e3-9046-0002a5d5c51b
+   MainThread:10:53:21.654 bleak_wrapper.py                          325 DEBUG    | Enabling notification on char b5f90084-aa8d-11e3-9046-0002a5d5c51b
+   MainThread:10:53:21.654 bleak_wrapper.py                          325 DEBUG    | Enabling notification on char b5f90081-aa8d-11e3-9046-0002a5d5c51b
+   MainThread:10:53:21.654 bleak_wrapper.py                          325 DEBUG    | Enabling notification on char b5f90083-aa8d-11e3-9046-0002a5d5c51b
+   MainThread:10:53:21.655 bleak_wrapper.py                          325 DEBUG    | Enabling notification on char 00002a19-0000-1000-8000-00805f9b34fb
+   MainThread:10:53:21.655 bleak_wrapper.py                          325 DEBUG    | Enabling notification on char b5f90092-aa8d-11e3-9046-0002a5d5c51b
+   MainThread:10:53:21.655 bleak_wrapper.py                          327 INFO     | Done enabling notifications
+   MainThread:10:53:21.657 gopro_wireless.py                         716 INFO     | 
+>>>>>>> 84b41b4 (media list)
 <<<<<<<<--------------
     "id" : "QueryCmdId.REG_STATUS_VAL_UPDATE",
     "status_id" : "StatusId.ENCODING",
@@ -122,12 +238,24 @@ devices Paired
     "uuid" : "Query",
 <<<<<<<<--------------
 
+<<<<<<< HEAD
    MainThread:14:41:21.060 gopro_wireless.py                         720 DEBUG    | Writing to [Query] UUID: 20:02:53:0a
    MainThread:14:41:21.060 bleak_wrapper.py                          100 DEBUG    | Writing to Query: b5f90076aa8d11e390460002a5d5c51b
    MainThread:14:41:21.583 client.py                                 884 DEBUG    | Write Characteristic b5f90076-aa8d-11e3-9046-0002a5d5c51b | /org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char003c: bytearray(b' \x02S\n')
    MainThread:14:41:21.583 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char003e): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x05S\x00\n\x01\x00'))>}, []]
    MainThread:14:41:21.584 gopro_wireless.py                         674 DEBUG    | Received response on BleUUID [Query Response]: 05:53:00:0a:01:00
    MainThread:14:41:21.584 gopro_wireless.py                         649 INFO     | 
+=======
+   MainThread:10:53:21.660 gopro_wireless.py                         720 DEBUG    | Writing to [Query] UUID: 20:02:53:0a
+   MainThread:10:53:21.660 bleak_wrapper.py                          100 DEBUG    | Writing to Query: b5f90076aa8d11e390460002a5d5c51b
+   MainThread:10:53:21.742 client.py                                 884 DEBUG    | Write Characteristic b5f90076-aa8d-11e3-9046-0002a5d5c51b | /org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char003c: bytearray(b' \x02S\n')
+   MainThread:10:53:21.744 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char003e): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x05S\x00\n\x01\x00'))>}, []]
+   MainThread:10:53:21.747 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char003e): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x05S\x00\n\x01\x00'))>}, []]
+   MainThread:10:53:21.749 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char003e): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x05S\x00\n\x01\x00'))>}, []]
+   MainThread:10:53:21.751 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char003e): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x05S\x00\n\x01\x00'))>}, []]
+   MainThread:10:53:21.753 gopro_wireless.py                         674 DEBUG    | Received response on BleUUID [Query Response]: 05:53:00:0a:01:00
+   MainThread:10:53:21.753 gopro_wireless.py                         649 INFO     | 
+>>>>>>> 84b41b4 (media list)
 -------------->>>>>>>>
     "id" : "QueryCmdId.REG_STATUS_VAL_UPDATE",
     "status" : "ErrorCode.SUCCESS",
@@ -137,8 +265,45 @@ devices Paired
     },
 -------------->>>>>>>>
 
+<<<<<<< HEAD
    MainThread:14:41:21.588 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char003e): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x05S\x00\n\x01\x00'))>}, []]
    MainThread:14:41:21.588 gopro_wireless.py                         716 INFO     | 
+=======
+   MainThread:10:53:21.755 gopro_wireless.py                         674 DEBUG    | Received response on BleUUID [Query Response]: 05:53:00:0a:01:00
+   MainThread:10:53:21.756 gopro_wireless.py                         655 INFO     | 
+----ASYNC----->>>>>>>>
+    "id" : "QueryCmdId.REG_STATUS_VAL_UPDATE",
+    "status" : "ErrorCode.SUCCESS",
+    "protocol" : "Protocol.BLE",
+    "data" : {
+        "StatusId.ENCODING" : "False",
+    },
+----ASYNC----->>>>>>>>
+
+   MainThread:10:53:21.758 gopro_wireless.py                         674 DEBUG    | Received response on BleUUID [Query Response]: 05:53:00:0a:01:00
+   MainThread:10:53:21.758 gopro_wireless.py                         655 INFO     | 
+----ASYNC----->>>>>>>>
+    "id" : "QueryCmdId.REG_STATUS_VAL_UPDATE",
+    "status" : "ErrorCode.SUCCESS",
+    "protocol" : "Protocol.BLE",
+    "data" : {
+        "StatusId.ENCODING" : "False",
+    },
+----ASYNC----->>>>>>>>
+
+   MainThread:10:53:21.760 gopro_wireless.py                         674 DEBUG    | Received response on BleUUID [Query Response]: 05:53:00:0a:01:00
+   MainThread:10:53:21.761 gopro_wireless.py                         655 INFO     | 
+----ASYNC----->>>>>>>>
+    "id" : "QueryCmdId.REG_STATUS_VAL_UPDATE",
+    "status" : "ErrorCode.SUCCESS",
+    "protocol" : "Protocol.BLE",
+    "data" : {
+        "StatusId.ENCODING" : "False",
+    },
+----ASYNC----->>>>>>>>
+
+   MainThread:10:53:21.763 gopro_wireless.py                         716 INFO     | 
+>>>>>>> 84b41b4 (media list)
 <<<<<<<<--------------
     "id" : "QueryCmdId.REG_STATUS_VAL_UPDATE",
     "status_id" : "StatusId.SYSTEM_BUSY",
@@ -146,10 +311,22 @@ devices Paired
     "uuid" : "Query",
 <<<<<<<<--------------
 
+<<<<<<< HEAD
    MainThread:14:41:21.591 gopro_wireless.py                         720 DEBUG    | Writing to [Query] UUID: 20:02:53:08
    MainThread:14:41:21.591 bleak_wrapper.py                          100 DEBUG    | Writing to Query: b5f90076aa8d11e390460002a5d5c51b
    MainThread:14:41:21.591 gopro_wireless.py                         674 DEBUG    | Received response on BleUUID [Query Response]: 05:53:00:0a:01:00
    MainThread:14:41:21.591 gopro_wireless.py                         649 INFO     | 
+=======
+   MainThread:10:53:21.765 gopro_wireless.py                         720 DEBUG    | Writing to [Query] UUID: 20:02:53:08
+   MainThread:10:53:21.765 bleak_wrapper.py                          100 DEBUG    | Writing to Query: b5f90076aa8d11e390460002a5d5c51b
+   MainThread:10:53:21.888 client.py                                 884 DEBUG    | Write Characteristic b5f90076-aa8d-11e3-9046-0002a5d5c51b | /org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char003c: bytearray(b' \x02S\x08')
+   MainThread:10:53:21.890 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char003e): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x05S\x00\x08\x01\x00'))>}, []]
+   MainThread:10:53:21.893 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char003e): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x05S\x00\x08\x01\x00'))>}, []]
+   MainThread:10:53:21.895 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char003e): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x05S\x00\x08\x01\x00'))>}, []]
+   MainThread:10:53:21.897 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char003e): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x05S\x00\x08\x01\x00'))>}, []]
+   MainThread:10:53:21.899 gopro_wireless.py                         674 DEBUG    | Received response on BleUUID [Query Response]: 05:53:00:08:01:00
+   MainThread:10:53:21.899 gopro_wireless.py                         649 INFO     | 
+>>>>>>> 84b41b4 (media list)
 -------------->>>>>>>>
     "id" : "QueryCmdId.REG_STATUS_VAL_UPDATE",
     "status" : "ErrorCode.SUCCESS",
@@ -186,6 +363,7 @@ devices Paired
     },
 ----ASYNC----->>>>>>>>
 
+<<<<<<< HEAD
    MainThread:14:41:21.754 gopro_wireless.py                         674 DEBUG    | Received response on BleUUID [Query Response]: 05:53:00:08:01:00
    MainThread:14:41:21.754 gopro_wireless.py                         655 INFO     | 
 ----ASYNC----->>>>>>>>
@@ -201,35 +379,128 @@ devices Paired
    MainThread:14:41:21.876 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0034): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x02\x0f\x02'))>}, []]
    MainThread:14:41:21.876 gopro_wireless.py                         674 DEBUG    | Received response on BleUUID [Command Response]: 02:0f:02
    MainThread:14:41:21.876 gopro_wireless.py                         649 INFO     | 
+=======
+   MainThread:10:53:21.901 gopro_wireless.py                         674 DEBUG    | Received response on BleUUID [Query Response]: 05:53:00:08:01:00
+   MainThread:10:53:21.901 gopro_wireless.py                         655 INFO     | 
+----ASYNC----->>>>>>>>
+    "id" : "QueryCmdId.REG_STATUS_VAL_UPDATE",
+    "status" : "ErrorCode.SUCCESS",
+    "protocol" : "Protocol.BLE",
+    "data" : {
+        "StatusId.SYSTEM_BUSY" : "False",
+    },
+----ASYNC----->>>>>>>>
+
+   MainThread:10:53:21.904 gopro_wireless.py                         674 DEBUG    | Received response on BleUUID [Query Response]: 05:53:00:08:01:00
+   MainThread:10:53:21.904 gopro_wireless.py                         655 INFO     | 
+----ASYNC----->>>>>>>>
+    "id" : "QueryCmdId.REG_STATUS_VAL_UPDATE",
+    "status" : "ErrorCode.SUCCESS",
+    "protocol" : "Protocol.BLE",
+    "data" : {
+        "StatusId.SYSTEM_BUSY" : "False",
+    },
+----ASYNC----->>>>>>>>
+
+   MainThread:10:53:21.906 gopro_wireless.py                         674 DEBUG    | Received response on BleUUID [Query Response]: 05:53:00:08:01:00
+   MainThread:10:53:21.907 gopro_wireless.py                         655 INFO     | 
+----ASYNC----->>>>>>>>
+    "id" : "QueryCmdId.REG_STATUS_VAL_UPDATE",
+    "status" : "ErrorCode.SUCCESS",
+    "protocol" : "Protocol.BLE",
+    "data" : {
+        "StatusId.SYSTEM_BUSY" : "False",
+    },
+----ASYNC----->>>>>>>>
+
+   MainThread:10:53:21.909 gopro_wireless.py                         591 INFO     | BLE is ready!
+   MainThread:10:53:21.938 gopro_wireless.py                         716 INFO     | 
+<<<<<<<<--------------
+    "id" : "CmdId.SET_DATE_TIME_DST",
+    "protocol" : "Protocol.BLE",
+    "uuid" : "Command",
+    "date_time" : "2024-07-10 10:53:21.938311+01:00",
+    "tz_offset" : "60",
+    "is_dst" : "True",
+<<<<<<<<--------------
+
+   MainThread:10:53:21.943 gopro_wireless.py                         720 DEBUG    | Writing to [Command] UUID: 20:0c:0f:0a:07:e8:07:0a:0a:35:15:00:3c:01
+   MainThread:10:53:21.943 bleak_wrapper.py                          100 DEBUG    | Writing to Command: b5f90072aa8d11e390460002a5d5c51b
+   MainThread:10:53:22.034 client.py                                 884 DEBUG    | Write Characteristic b5f90072-aa8d-11e3-9046-0002a5d5c51b | /org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0032: bytearray(b' \x0c\x0f\n\x07\xe8\x07\n\n5\x15\x00<\x01')
+   MainThread:10:53:22.036 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0034): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x02\x0f\x02'))>}, []]
+   MainThread:10:53:22.038 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0034): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x02\x0f\x02'))>}, []]
+   MainThread:10:53:22.039 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0034): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x02\x0f\x02'))>}, []]
+   MainThread:10:53:22.041 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0034): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x02\x0f\x02'))>}, []]
+   MainThread:10:53:22.042 gopro_wireless.py                         674 DEBUG    | Received response on BleUUID [Command Response]: 02:0f:02
+   MainThread:10:53:22.043 gopro_wireless.py                         649 INFO     | 
+>>>>>>> 84b41b4 (media list)
 -------------->>>>>>>>
     "id" : "CmdId.SET_DATE_TIME_DST",
     "status" : "ErrorCode.INVALID_PARAM",
     "protocol" : "Protocol.BLE",
 -------------->>>>>>>>
 
+<<<<<<< HEAD
    MainThread:14:41:21.878 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0034): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x02\x0f\x02'))>}, []]
    MainThread:14:41:21.879 gopro_wireless.py                         674 DEBUG    | Received response on BleUUID [Command Response]: 02:0f:02
    MainThread:14:41:21.879 gopro_wireless.py                         655 INFO     | 
+=======
+   MainThread:10:53:22.044 gopro_wireless.py                         674 DEBUG    | Received response on BleUUID [Command Response]: 02:0f:02
+   MainThread:10:53:22.044 gopro_wireless.py                         655 INFO     | 
+>>>>>>> 84b41b4 (media list)
 ----ASYNC----->>>>>>>>
     "id" : "CmdId.SET_DATE_TIME_DST",
     "status" : "ErrorCode.INVALID_PARAM",
     "protocol" : "Protocol.BLE",
 ----ASYNC----->>>>>>>>
 
+<<<<<<< HEAD
    MainThread:14:41:21.881 gopro_wireless.py                         732 WARNING  | Received non-success status: ErrorCode.INVALID_PARAM
    MainThread:14:41:21.882 gopro_wireless.py                         716 INFO     | 
+=======
+   MainThread:10:53:22.045 gopro_wireless.py                         674 DEBUG    | Received response on BleUUID [Command Response]: 02:0f:02
+   MainThread:10:53:22.045 gopro_wireless.py                         655 INFO     | 
+----ASYNC----->>>>>>>>
+    "id" : "CmdId.SET_DATE_TIME_DST",
+    "status" : "ErrorCode.INVALID_PARAM",
+    "protocol" : "Protocol.BLE",
+----ASYNC----->>>>>>>>
+
+   MainThread:10:53:22.046 gopro_wireless.py                         674 DEBUG    | Received response on BleUUID [Command Response]: 02:0f:02
+   MainThread:10:53:22.047 gopro_wireless.py                         655 INFO     | 
+----ASYNC----->>>>>>>>
+    "id" : "CmdId.SET_DATE_TIME_DST",
+    "status" : "ErrorCode.INVALID_PARAM",
+    "protocol" : "Protocol.BLE",
+----ASYNC----->>>>>>>>
+
+   MainThread:10:53:22.048 gopro_wireless.py                         732 WARNING  | Received non-success status: ErrorCode.INVALID_PARAM
+   MainThread:10:53:22.049 gopro_wireless.py                         716 INFO     | 
+>>>>>>> 84b41b4 (media list)
 <<<<<<<<--------------
     "id" : "CmdId.GET_THIRD_PARTY_API_VERSION",
     "protocol" : "Protocol.BLE",
     "uuid" : "Command",
 <<<<<<<<--------------
 
+<<<<<<< HEAD
    MainThread:14:41:21.884 gopro_wireless.py                         720 DEBUG    | Writing to [Command] UUID: 20:01:51
    MainThread:14:41:21.884 bleak_wrapper.py                          100 DEBUG    | Writing to Command: b5f90072aa8d11e390460002a5d5c51b
    MainThread:14:41:22.070 client.py                                 884 DEBUG    | Write Characteristic b5f90072-aa8d-11e3-9046-0002a5d5c51b | /org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0032: bytearray(b' \x01Q')
    MainThread:14:41:22.071 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0034): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x06Q\x00\x01\x02\x01\x00'))>}, []]
    MainThread:14:41:22.071 gopro_wireless.py                         674 DEBUG    | Received response on BleUUID [Command Response]: 06:51:00:01:02:01:00
    MainThread:14:41:22.072 gopro_wireless.py                         649 INFO     | 
+=======
+   MainThread:10:53:22.051 gopro_wireless.py                         720 DEBUG    | Writing to [Command] UUID: 20:01:51
+   MainThread:10:53:22.051 bleak_wrapper.py                          100 DEBUG    | Writing to Command: b5f90072aa8d11e390460002a5d5c51b
+   MainThread:10:53:22.132 client.py                                 884 DEBUG    | Write Characteristic b5f90072-aa8d-11e3-9046-0002a5d5c51b | /org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0032: bytearray(b' \x01Q')
+   MainThread:10:53:22.134 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0034): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x06Q\x00\x01\x02\x01\x00'))>}, []]
+   MainThread:10:53:22.135 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0034): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x06Q\x00\x01\x02\x01\x00'))>}, []]
+   MainThread:10:53:22.137 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0034): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x06Q\x00\x01\x02\x01\x00'))>}, []]
+   MainThread:10:53:22.138 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0034): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x06Q\x00\x01\x02\x01\x00'))>}, []]
+   MainThread:10:53:22.140 gopro_wireless.py                         674 DEBUG    | Received response on BleUUID [Command Response]: 06:51:00:01:02:01:00
+   MainThread:10:53:22.140 gopro_wireless.py                         649 INFO     | 
+>>>>>>> 84b41b4 (media list)
 -------------->>>>>>>>
     "id" : "CmdId.GET_THIRD_PARTY_API_VERSION",
     "status" : "ErrorCode.SUCCESS",
@@ -237,12 +508,17 @@ devices Paired
     "data" : "2.0",
 -------------->>>>>>>>
 
+<<<<<<< HEAD
    MainThread:14:41:22.074 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0034): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x06Q\x00\x01\x02\x01\x00'))>}, []]
    MainThread:14:41:22.074 gopro_wireless.py                         304 INFO     | Using Open GoPro API version 2.0
    MainThread:14:41:22.076 gopro_wireless.py                         786 INFO     | Discovering Wifi AP info and enabling via BLE
    MainThread:14:41:22.077 bleak_wrapper.py                           87 DEBUG    | Reading from Wifi AP Password
    MainThread:14:41:22.077 gopro_wireless.py                         674 DEBUG    | Received response on BleUUID [Command Response]: 06:51:00:01:02:01:00
    MainThread:14:41:22.078 gopro_wireless.py                         655 INFO     | 
+=======
+   MainThread:10:53:22.142 gopro_wireless.py                         674 DEBUG    | Received response on BleUUID [Command Response]: 06:51:00:01:02:01:00
+   MainThread:10:53:22.142 gopro_wireless.py                         655 INFO     | 
+>>>>>>> 84b41b4 (media list)
 ----ASYNC----->>>>>>>>
     "id" : "CmdId.GET_THIRD_PARTY_API_VERSION",
     "status" : "ErrorCode.SUCCESS",
@@ -250,6 +526,7 @@ devices Paired
     "data" : "2.0",
 ----ASYNC----->>>>>>>>
 
+<<<<<<< HEAD
    MainThread:14:41:22.217 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0025/char0028): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'NPc-hg6-S5S'))>}, []]
    MainThread:14:41:22.217 client.py                                 762 DEBUG    | Read Characteristic b5f90003-aa8d-11e3-9046-0002a5d5c51b | /org/bluez/hci0/dev_EB_95_65_61_51_80/service0025/char0028: bytearray(b'NPc-hg6-S5S')
    MainThread:14:41:22.217 bleak_wrapper.py                           89 DEBUG    | Received response on BleUUID [Wifi AP Password]: 4e:50:63:2d:68:67:36:2d:53:35:53
@@ -260,6 +537,39 @@ devices Paired
    MainThread:14:41:22.461 bleak_wrapper.py                           89 DEBUG    | Received response on BleUUID [Wifi AP SSID]: 47:6f:50:72:6f:20:48:65:72:6f:20:39:20:41:6e:67:6b:61:73:61
    MainThread:14:41:22.461 gopro_wireless.py                         742 DEBUG    | Reading from Wifi AP SSID
    MainThread:14:41:22.462 gopro_wireless.py                         716 INFO     | 
+=======
+   MainThread:10:53:22.143 gopro_wireless.py                         674 DEBUG    | Received response on BleUUID [Command Response]: 06:51:00:01:02:01:00
+   MainThread:10:53:22.144 gopro_wireless.py                         655 INFO     | 
+----ASYNC----->>>>>>>>
+    "id" : "CmdId.GET_THIRD_PARTY_API_VERSION",
+    "status" : "ErrorCode.SUCCESS",
+    "protocol" : "Protocol.BLE",
+    "data" : "2.0",
+----ASYNC----->>>>>>>>
+
+   MainThread:10:53:22.145 gopro_wireless.py                         674 DEBUG    | Received response on BleUUID [Command Response]: 06:51:00:01:02:01:00
+   MainThread:10:53:22.145 gopro_wireless.py                         655 INFO     | 
+----ASYNC----->>>>>>>>
+    "id" : "CmdId.GET_THIRD_PARTY_API_VERSION",
+    "status" : "ErrorCode.SUCCESS",
+    "protocol" : "Protocol.BLE",
+    "data" : "2.0",
+----ASYNC----->>>>>>>>
+
+   MainThread:10:53:22.147 gopro_wireless.py                         304 INFO     | Using Open GoPro API version 2.0
+   MainThread:10:53:22.148 gopro_wireless.py                         786 INFO     | Discovering Wifi AP info and enabling via BLE
+   MainThread:10:53:22.149 bleak_wrapper.py                           87 DEBUG    | Reading from Wifi AP Password
+   MainThread:10:53:22.230 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0025/char0028): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'NPc-hg6-S5S'))>}, []]
+   MainThread:10:53:22.232 client.py                                 762 DEBUG    | Read Characteristic b5f90003-aa8d-11e3-9046-0002a5d5c51b | /org/bluez/hci0/dev_EB_95_65_61_51_80/service0025/char0028: bytearray(b'NPc-hg6-S5S')
+   MainThread:10:53:22.233 bleak_wrapper.py                           89 DEBUG    | Received response on BleUUID [Wifi AP Password]: 4e:50:63:2d:68:67:36:2d:53:35:53
+   MainThread:10:53:22.233 gopro_wireless.py                         742 DEBUG    | Reading from Wifi AP Password
+   MainThread:10:53:22.233 bleak_wrapper.py                           87 DEBUG    | Reading from Wifi AP SSID
+   MainThread:10:53:22.376 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0025/char0026): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'GoPro Hero 9 Angkasa'))>}, []]
+   MainThread:10:53:22.379 client.py                                 762 DEBUG    | Read Characteristic b5f90002-aa8d-11e3-9046-0002a5d5c51b | /org/bluez/hci0/dev_EB_95_65_61_51_80/service0025/char0026: bytearray(b'GoPro Hero 9 Angkasa')
+   MainThread:10:53:22.380 bleak_wrapper.py                           89 DEBUG    | Received response on BleUUID [Wifi AP SSID]: 47:6f:50:72:6f:20:48:65:72:6f:20:39:20:41:6e:67:6b:61:73:61
+   MainThread:10:53:22.380 gopro_wireless.py                         742 DEBUG    | Reading from Wifi AP SSID
+   MainThread:10:53:22.380 gopro_wireless.py                         716 INFO     | 
+>>>>>>> 84b41b4 (media list)
 <<<<<<<<--------------
     "id" : "CmdId.SET_WIFI",
     "protocol" : "Protocol.BLE",
@@ -267,6 +577,7 @@ devices Paired
     "enable" : "True",
 <<<<<<<<--------------
 
+<<<<<<< HEAD
    MainThread:14:41:22.465 gopro_wireless.py                         720 DEBUG    | Writing to [Command] UUID: 20:03:17:01:01
    MainThread:14:41:22.465 bleak_wrapper.py                          100 DEBUG    | Writing to Command: b5f90072aa8d11e390460002a5d5c51b
    MainThread:14:41:22.655 client.py                                 884 DEBUG    | Write Characteristic b5f90072-aa8d-11e3-9046-0002a5d5c51b | /org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0032: bytearray(b' \x03\x17\x01\x01')
@@ -274,20 +585,41 @@ devices Paired
    MainThread:14:41:23.728 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0034): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x02\x17\x00'))>}, []]
    MainThread:14:41:23.728 gopro_wireless.py                         674 DEBUG    | Received response on BleUUID [Command Response]: 02:17:00
    MainThread:14:41:23.729 gopro_wireless.py                         649 INFO     | 
+=======
+   MainThread:10:53:22.382 gopro_wireless.py                         720 DEBUG    | Writing to [Command] UUID: 20:03:17:01:01
+   MainThread:10:53:22.382 bleak_wrapper.py                          100 DEBUG    | Writing to Command: b5f90072aa8d11e390460002a5d5c51b
+   MainThread:10:53:22.473 client.py                                 884 DEBUG    | Write Characteristic b5f90072-aa8d-11e3-9046-0002a5d5c51b | /org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0032: bytearray(b' \x03\x17\x01\x01')
+   MainThread:10:53:23.546 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0034): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x02\x17\x00'))>}, []]
+   MainThread:10:53:23.548 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0034): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x02\x17\x00'))>}, []]
+   MainThread:10:53:23.550 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0034): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x02\x17\x00'))>}, []]
+   MainThread:10:53:23.551 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0034): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x02\x17\x00'))>}, []]
+   MainThread:10:53:23.553 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char003e): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x08\x93\x00\x08\x01\x00\n\x01\x00'))>}, []]
+   MainThread:10:53:23.554 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char003e): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x08\x93\x00\x08\x01\x00\n\x01\x00'))>}, []]
+   MainThread:10:53:23.555 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char003e): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x08\x93\x00\x08\x01\x00\n\x01\x00'))>}, []]
+   MainThread:10:53:23.557 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char003e): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x08\x93\x00\x08\x01\x00\n\x01\x00'))>}, []]
+   MainThread:10:53:23.558 gopro_wireless.py                         674 DEBUG    | Received response on BleUUID [Command Response]: 02:17:00
+   MainThread:10:53:23.558 gopro_wireless.py                         649 INFO     | 
+>>>>>>> 84b41b4 (media list)
 -------------->>>>>>>>
     "id" : "CmdId.SET_WIFI",
     "status" : "ErrorCode.SUCCESS",
     "protocol" : "Protocol.BLE",
 -------------->>>>>>>>
 
+<<<<<<< HEAD
    MainThread:14:41:23.731 gopro_wireless.py                         674 DEBUG    | Received response on BleUUID [Command Response]: 02:17:00
    MainThread:14:41:23.732 gopro_wireless.py                         655 INFO     | 
+=======
+   MainThread:10:53:23.560 gopro_wireless.py                         674 DEBUG    | Received response on BleUUID [Command Response]: 02:17:00
+   MainThread:10:53:23.560 gopro_wireless.py                         655 INFO     | 
+>>>>>>> 84b41b4 (media list)
 ----ASYNC----->>>>>>>>
     "id" : "CmdId.SET_WIFI",
     "status" : "ErrorCode.SUCCESS",
     "protocol" : "Protocol.BLE",
 ----ASYNC----->>>>>>>>
 
+<<<<<<< HEAD
    MainThread:14:41:23.734 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char003e): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x08\x93\x00\x08\x01\x00\n\x01\x00'))>}, []]
    MainThread:14:41:23.734 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char003e): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x08\x93\x00\x08\x01\x00\n\x01\x00'))>}, []]
    MainThread:14:41:23.734 wireless.py                               483 INFO     | Scanning for GoPro Hero 9 Angkasa...
@@ -432,3 +764,281 @@ fh_83d3a0_5G
    MainThread:15:00:47.978 logger.py                                  71 DEBUG    | header: Content-Type: application/json
    MainThread:15:00:47.978 logger.py                                  71 DEBUG    | header: Content-Length: 3
    MainThread:15:00:47.978 connectionpool.py                         546 DEBUG    | http://10.5.5.9:8080 "GET /gp/gpControl/setting/75/5 HTTP/11" 200 3
+=======
+   MainThread:10:53:23.562 gopro_wireless.py                         674 DEBUG    | Received response on BleUUID [Command Response]: 02:17:00
+   MainThread:10:53:23.562 gopro_wireless.py                         655 INFO     | 
+----ASYNC----->>>>>>>>
+    "id" : "CmdId.SET_WIFI",
+    "status" : "ErrorCode.SUCCESS",
+    "protocol" : "Protocol.BLE",
+----ASYNC----->>>>>>>>
+
+   MainThread:10:53:23.563 gopro_wireless.py                         674 DEBUG    | Received response on BleUUID [Command Response]: 02:17:00
+   MainThread:10:53:23.563 gopro_wireless.py                         655 INFO     | 
+----ASYNC----->>>>>>>>
+    "id" : "CmdId.SET_WIFI",
+    "status" : "ErrorCode.SUCCESS",
+    "protocol" : "Protocol.BLE",
+----ASYNC----->>>>>>>>
+
+   MainThread:10:53:23.565 gopro_wireless.py                         674 DEBUG    | Received response on BleUUID [Query Response]: 08:93:00:08:01:00:0a:01:00
+   MainThread:10:53:23.565 gopro_wireless.py                         655 INFO     | 
+----ASYNC----->>>>>>>>
+    "id" : "QueryCmdId.STATUS_VAL_PUSH",
+    "status" : "ErrorCode.SUCCESS",
+    "protocol" : "Protocol.BLE",
+    "data" : {
+        "StatusId.SYSTEM_BUSY" : "False",
+        "StatusId.ENCODING" : "False",
+    },
+----ASYNC----->>>>>>>>
+
+   MainThread:10:53:23.567 gopro_wireless.py                         674 DEBUG    | Received response on BleUUID [Query Response]: 08:93:00:08:01:00:0a:01:00
+   MainThread:10:53:23.567 gopro_wireless.py                         655 INFO     | 
+----ASYNC----->>>>>>>>
+    "id" : "QueryCmdId.STATUS_VAL_PUSH",
+    "status" : "ErrorCode.SUCCESS",
+    "protocol" : "Protocol.BLE",
+    "data" : {
+        "StatusId.SYSTEM_BUSY" : "False",
+        "StatusId.ENCODING" : "False",
+    },
+----ASYNC----->>>>>>>>
+
+   MainThread:10:53:23.568 gopro_wireless.py                         674 DEBUG    | Received response on BleUUID [Query Response]: 08:93:00:08:01:00:0a:01:00
+   MainThread:10:53:23.569 gopro_wireless.py                         655 INFO     | 
+----ASYNC----->>>>>>>>
+    "id" : "QueryCmdId.STATUS_VAL_PUSH",
+    "status" : "ErrorCode.SUCCESS",
+    "protocol" : "Protocol.BLE",
+    "data" : {
+        "StatusId.SYSTEM_BUSY" : "False",
+        "StatusId.ENCODING" : "False",
+    },
+----ASYNC----->>>>>>>>
+
+   MainThread:10:53:23.570 gopro_wireless.py                         674 DEBUG    | Received response on BleUUID [Query Response]: 08:93:00:08:01:00:0a:01:00
+   MainThread:10:53:23.570 gopro_wireless.py                         655 INFO     | 
+----ASYNC----->>>>>>>>
+    "id" : "QueryCmdId.STATUS_VAL_PUSH",
+    "status" : "ErrorCode.SUCCESS",
+    "protocol" : "Protocol.BLE",
+    "data" : {
+        "StatusId.SYSTEM_BUSY" : "False",
+        "StatusId.ENCODING" : "False",
+    },
+----ASYNC----->>>>>>>>
+
+   MainThread:10:53:23.572 wireless.py                               483 INFO     | Scanning for GoPro Hero 9 Angkasa...
+   MainThread:10:53:23.573 util.py                                   210 DEBUG    | Send cmd -->  nmcli device wifi rescan
+   MainThread:10:53:23.630 util.py                                   216 DEBUG    | Receive response --> 
+   MainThread:10:53:23.630 util.py                                   210 DEBUG    | Send cmd -->  nmcli -f SSID device wifi list
+   MainThread:10:53:27.703 util.py                                   216 DEBUG    | Receive response --> SSID           
+BMZimages      
+BMZimages_plus 
+--             
+--             
+BERKAT         
+WLAN1          
+WLAN1_5G       
+
+   MainThread:10:53:28.703 util.py                                   210 DEBUG    | Send cmd -->  nmcli device wifi rescan
+   MainThread:10:53:28.754 util.py                                   216 DEBUG    | Receive response --> 
+   MainThread:10:53:28.754 util.py                                   210 DEBUG    | Send cmd -->  nmcli -f SSID device wifi list
+   MainThread:10:53:28.775 util.py                                   216 DEBUG    | Receive response --> SSID           
+BMZimages      
+BMZimages_plus 
+--             
+--             
+BERKAT         
+WLAN1          
+WLAN1_5G       
+
+   MainThread:10:53:29.775 util.py                                   210 DEBUG    | Send cmd -->  nmcli device wifi rescan
+   MainThread:10:53:29.826 util.py                                   216 DEBUG    | Receive response --> 
+   MainThread:10:53:29.827 util.py                                   210 DEBUG    | Send cmd -->  nmcli -f SSID device wifi list
+   MainThread:10:53:29.848 util.py                                   216 DEBUG    | Receive response --> SSID           
+BMZimages      
+BMZimages_plus 
+--             
+--             
+BERKAT         
+WLAN1          
+WLAN1_5G       
+
+   MainThread:10:53:30.848 util.py                                   210 DEBUG    | Send cmd -->  nmcli device wifi rescan
+   MainThread:10:53:30.898 util.py                                   216 DEBUG    | Receive response --> 
+   MainThread:10:53:30.898 util.py                                   210 DEBUG    | Send cmd -->  nmcli -f SSID device wifi list
+   MainThread:10:53:30.919 util.py                                   216 DEBUG    | Receive response --> SSID           
+BMZimages      
+BMZimages_plus 
+--             
+--             
+BERKAT         
+WLAN1          
+WLAN1_5G       
+
+   MainThread:10:53:31.919 util.py                                   210 DEBUG    | Send cmd -->  nmcli device wifi rescan
+   MainThread:10:53:31.966 util.py                                   216 DEBUG    | Receive response --> 
+   MainThread:10:53:31.966 util.py                                   210 DEBUG    | Send cmd -->  nmcli -f SSID device wifi list
+   MainThread:10:53:31.986 util.py                                   216 DEBUG    | Receive response --> SSID           
+BMZimages      
+BMZimages_plus 
+--             
+--             
+BERKAT         
+WLAN1          
+WLAN1_5G       
+
+   MainThread:10:53:32.986 util.py                                   210 DEBUG    | Send cmd -->  nmcli device wifi rescan
+   MainThread:10:53:33.030 util.py                                   216 DEBUG    | Receive response --> 
+   MainThread:10:53:33.030 util.py                                   210 DEBUG    | Send cmd -->  nmcli -f SSID device wifi list
+   MainThread:10:53:33.052 util.py                                   216 DEBUG    | Receive response --> SSID           
+BMZimages      
+BMZimages_plus 
+--             
+--             
+BERKAT         
+WLAN1          
+WLAN1_5G       
+
+   MainThread:10:53:34.052 wireless.py                               498 WARNING  | Wifi Scan timed out
+   MainThread:10:53:34.054 gopro_wireless.py                         795 WARNING  | Wifi connection failed. Retrying #1
+   MainThread:10:53:34.056 gopro_wireless.py                         716 INFO     | 
+<<<<<<<<--------------
+    "id" : "CmdId.SET_WIFI",
+    "protocol" : "Protocol.BLE",
+    "uuid" : "Command",
+    "enable" : "False",
+<<<<<<<<--------------
+
+   MainThread:10:53:34.058 gopro_wireless.py                         720 DEBUG    | Writing to [Command] UUID: 20:03:17:01:00
+   MainThread:10:53:34.058 bleak_wrapper.py                          100 DEBUG    | Writing to Command: b5f90072aa8d11e390460002a5d5c51b
+   MainThread:10:53:34.174 client.py                                 884 DEBUG    | Write Characteristic b5f90072-aa8d-11e3-9046-0002a5d5c51b | /org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0032: bytearray(b' \x03\x17\x01\x00')
+   MainThread:10:53:35.198 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0034): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x02\x17\x00'))>}, []]
+   MainThread:10:53:35.201 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0034): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x02\x17\x00'))>}, []]
+   MainThread:10:53:35.203 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0034): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x02\x17\x00'))>}, []]
+   MainThread:10:53:35.205 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0034): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x02\x17\x00'))>}, []]
+   MainThread:10:53:35.208 gopro_wireless.py                         674 DEBUG    | Received response on BleUUID [Command Response]: 02:17:00
+   MainThread:10:53:35.208 gopro_wireless.py                         649 INFO     | 
+-------------->>>>>>>>
+    "id" : "CmdId.SET_WIFI",
+    "status" : "ErrorCode.SUCCESS",
+    "protocol" : "Protocol.BLE",
+-------------->>>>>>>>
+
+   MainThread:10:53:35.210 gopro_wireless.py                         674 DEBUG    | Received response on BleUUID [Command Response]: 02:17:00
+   MainThread:10:53:35.210 gopro_wireless.py                         655 INFO     | 
+----ASYNC----->>>>>>>>
+    "id" : "CmdId.SET_WIFI",
+    "status" : "ErrorCode.SUCCESS",
+    "protocol" : "Protocol.BLE",
+----ASYNC----->>>>>>>>
+
+   MainThread:10:53:35.212 gopro_wireless.py                         674 DEBUG    | Received response on BleUUID [Command Response]: 02:17:00
+   MainThread:10:53:35.213 gopro_wireless.py                         655 INFO     | 
+----ASYNC----->>>>>>>>
+    "id" : "CmdId.SET_WIFI",
+    "status" : "ErrorCode.SUCCESS",
+    "protocol" : "Protocol.BLE",
+----ASYNC----->>>>>>>>
+
+   MainThread:10:53:35.215 gopro_wireless.py                         674 DEBUG    | Received response on BleUUID [Command Response]: 02:17:00
+   MainThread:10:53:35.215 gopro_wireless.py                         655 INFO     | 
+----ASYNC----->>>>>>>>
+    "id" : "CmdId.SET_WIFI",
+    "status" : "ErrorCode.SUCCESS",
+    "protocol" : "Protocol.BLE",
+----ASYNC----->>>>>>>>
+
+   MainThread:10:53:35.217 gopro_wireless.py                         716 INFO     | 
+<<<<<<<<--------------
+    "id" : "CmdId.SET_WIFI",
+    "protocol" : "Protocol.BLE",
+    "uuid" : "Command",
+    "enable" : "True",
+<<<<<<<<--------------
+
+   MainThread:10:53:35.220 gopro_wireless.py                         720 DEBUG    | Writing to [Command] UUID: 20:03:17:01:01
+   MainThread:10:53:35.220 bleak_wrapper.py                          100 DEBUG    | Writing to Command: b5f90072aa8d11e390460002a5d5c51b
+   MainThread:10:53:35.295 client.py                                 884 DEBUG    | Write Characteristic b5f90072-aa8d-11e3-9046-0002a5d5c51b | /org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0032: bytearray(b' \x03\x17\x01\x01')
+   MainThread:10:53:36.319 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0034): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x02\x17\x00'))>}, []]
+   MainThread:10:53:36.322 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0034): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x02\x17\x00'))>}, []]
+   MainThread:10:53:36.323 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0034): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x02\x17\x00'))>}, []]
+   MainThread:10:53:36.325 manager.py                                860 DEBUG    | received D-Bus signal: org.freedesktop.DBus.Properties.PropertiesChanged (/org/bluez/hci0/dev_EB_95_65_61_51_80/service0031/char0034): ['org.bluez.GattCharacteristic1', {'Value': <dbus_fast.signature.Variant ('ay', bytearray(b'\x02\x17\x00'))>}, []]
+   MainThread:10:53:36.327 gopro_wireless.py                         674 DEBUG    | Received response on BleUUID [Command Response]: 02:17:00
+   MainThread:10:53:36.327 gopro_wireless.py                         649 INFO     | 
+-------------->>>>>>>>
+    "id" : "CmdId.SET_WIFI",
+    "status" : "ErrorCode.SUCCESS",
+    "protocol" : "Protocol.BLE",
+-------------->>>>>>>>
+
+   MainThread:10:53:36.328 gopro_wireless.py                         674 DEBUG    | Received response on BleUUID [Command Response]: 02:17:00
+   MainThread:10:53:36.329 gopro_wireless.py                         655 INFO     | 
+----ASYNC----->>>>>>>>
+    "id" : "CmdId.SET_WIFI",
+    "status" : "ErrorCode.SUCCESS",
+    "protocol" : "Protocol.BLE",
+----ASYNC----->>>>>>>>
+
+   MainThread:10:53:36.330 gopro_wireless.py                         674 DEBUG    | Received response on BleUUID [Command Response]: 02:17:00
+   MainThread:10:53:36.330 gopro_wireless.py                         655 INFO     | 
+----ASYNC----->>>>>>>>
+    "id" : "CmdId.SET_WIFI",
+    "status" : "ErrorCode.SUCCESS",
+    "protocol" : "Protocol.BLE",
+----ASYNC----->>>>>>>>
+
+   MainThread:10:53:36.331 gopro_wireless.py                         674 DEBUG    | Received response on BleUUID [Command Response]: 02:17:00
+   MainThread:10:53:36.332 gopro_wireless.py                         655 INFO     | 
+----ASYNC----->>>>>>>>
+    "id" : "CmdId.SET_WIFI",
+    "status" : "ErrorCode.SUCCESS",
+    "protocol" : "Protocol.BLE",
+----ASYNC----->>>>>>>>
+
+   MainThread:10:53:36.333 wireless.py                               483 INFO     | Scanning for GoPro Hero 9 Angkasa...
+   MainThread:10:53:36.334 util.py                                   210 DEBUG    | Send cmd -->  nmcli device wifi rescan
+   MainThread:10:53:36.394 util.py                                   216 DEBUG    | Receive response --> 
+   MainThread:10:53:36.394 util.py                                   210 DEBUG    | Send cmd -->  nmcli -f SSID device wifi list
+   MainThread:10:53:36.409 util.py                                   216 DEBUG    | Receive response --> SSID                 
+GoPro Hero 9 Angkasa 
+BMZimages            
+BMZimages_plus       
+--                   
+--                   
+--                   
+BERKAT               
+WLAN1                
+WLAN1_5G             
+
+   MainThread:10:53:36.409 wireless.py                               502 INFO     | Connecting to GoPro Hero 9 Angkasa...
+   MainThread:10:53:36.411 util.py                                   210 DEBUG    | Send cmd -->  nmcli dev wifi connect "GoPro Hero 9 Angkasa" password "NPc-hg6-S5S" ifname "wlan0"
+   MainThread:10:53:42.892 util.py                                   216 DEBUG    | Receive response --> [2KDevice 'wlan0' successfully activated with 'ee0522fb-78d2-4f2a-82cf-2bb00d6295e3'.
+
+   MainThread:10:53:42.899 connectionpool.py                         243 DEBUG    | Starting new HTTP connection (1): 10.5.5.9:8080
+   MainThread:10:53:42.908 logger.py                                  71 DEBUG    | send: b'GET /gp/gpControl/status HTTP/1.1\r\nHost: 10.5.5.9:8080\r\nUser-Agent: python-requests/2.32.3\r\nAccept-Encoding: gzip, deflate\r\nAccept: */*\r\nConnection: keep-alive\r\n\r\n'
+   MainThread:10:53:42.940 logger.py                                  71 DEBUG    | reply: 'HTTP/1.1 200 OK\r\n'
+   MainThread:10:53:42.941 logger.py                                  71 DEBUG    | header: Content-Type: application/json
+   MainThread:10:53:42.941 logger.py                                  71 DEBUG    | header: Content-Length: 1406
+   MainThread:10:53:42.942 connectionpool.py                         546 DEBUG    | http://10.5.5.9:8080 "GET /gp/gpControl/status HTTP/11" 200 1406
+   MainThread:10:54:08.322 connectionpool.py                         243 DEBUG    | Starting new HTTP connection (1): 10.5.5.9:8080
+   MainThread:10:54:08.330 logger.py                                  71 DEBUG    | send: b'GET /gopro/media/list HTTP/1.1\r\nHost: 10.5.5.9:8080\r\nUser-Agent: python-requests/2.32.3\r\nAccept-Encoding: gzip, deflate\r\nAccept: */*\r\nConnection: keep-alive\r\n\r\n'
+   MainThread:10:54:08.382 logger.py                                  71 DEBUG    | reply: 'HTTP/1.1 200 OK\r\n'
+   MainThread:10:54:08.383 logger.py                                  71 DEBUG    | header: Content-Type: application/json
+   MainThread:10:54:08.383 logger.py                                  71 DEBUG    | header: Content-Length: 793
+   MainThread:10:54:08.384 connectionpool.py                         546 DEBUG    | http://10.5.5.9:8080 "GET /gopro/media/list HTTP/11" 200 793
+   MainThread:10:54:21.149 connectionpool.py                         243 DEBUG    | Starting new HTTP connection (1): 10.5.5.9:8080
+   MainThread:10:54:21.156 logger.py                                  71 DEBUG    | send: b'GET /gopro/media/list HTTP/1.1\r\nHost: 10.5.5.9:8080\r\nUser-Agent: python-requests/2.32.3\r\nAccept-Encoding: gzip, deflate\r\nAccept: */*\r\nConnection: keep-alive\r\n\r\n'
+   MainThread:10:54:21.190 logger.py                                  71 DEBUG    | reply: 'HTTP/1.1 200 OK\r\n'
+   MainThread:10:54:21.191 logger.py                                  71 DEBUG    | header: Content-Type: application/json
+   MainThread:10:54:21.191 logger.py                                  71 DEBUG    | header: Content-Length: 866
+   MainThread:10:54:21.191 connectionpool.py                         546 DEBUG    | http://10.5.5.9:8080 "GET /gopro/media/list HTTP/11" 200 866
+   MainThread:10:54:34.520 connectionpool.py                         243 DEBUG    | Starting new HTTP connection (1): 10.5.5.9:8080
+   MainThread:10:54:34.528 logger.py                                  71 DEBUG    | send: b'GET /gopro/media/list HTTP/1.1\r\nHost: 10.5.5.9:8080\r\nUser-Agent: python-requests/2.32.3\r\nAccept-Encoding: gzip, deflate\r\nAccept: */*\r\nConnection: keep-alive\r\n\r\n'
+   MainThread:10:54:34.557 logger.py                                  71 DEBUG    | reply: 'HTTP/1.1 200 OK\r\n'
+   MainThread:10:54:34.559 logger.py                                  71 DEBUG    | header: Content-Type: application/json
+   MainThread:10:54:34.560 logger.py                                  71 DEBUG    | header: Content-Length: 939
+   MainThread:10:54:34.561 connectionpool.py                         546 DEBUG    | http://10.5.5.9:8080 "GET /gopro/media/list HTTP/11" 200 939
+>>>>>>> 84b41b4 (media list)

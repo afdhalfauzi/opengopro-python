@@ -16,7 +16,6 @@ from open_gopro.util import add_cli_args_and_parse, ainput
 import serial
 import json
 import requests
-import media_handler
 
 console = Console()  # rich consoler printer
 rtmp_URL = "rtmp://angkasatimelapse.com/live/mykey"
@@ -115,7 +114,7 @@ async def main(args: argparse.Namespace) -> None:
                 else:
                     json_data = ""
 
-                if "reqConfig" in json_data:
+                if serial_string == "get_setting":
                     http_command = GOPRO_BASE_URL + "/gp/gpControl/status"
                     print("Getting current GoPro settings..")
                     response = requests.get(http_command, timeout = 10)
