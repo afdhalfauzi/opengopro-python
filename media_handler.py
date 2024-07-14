@@ -44,7 +44,7 @@ def download_last_captured_media():
     with requests.get(url, stream=True, timeout=10) as request:
         request.raise_for_status()
         file = last_captured_media.split(".")[0] + ".jpg"
-        with open("gopro_media/"+file, "wb") as f:
+        with open("gdrive_auto_backup_files/images/"+file, "wb") as f:
             logger.info(f"receiving binary stream to {file}...")
             for chunk in request.iter_content(chunk_size=8192):
                 f.write(chunk)
