@@ -1,6 +1,8 @@
 rtmp_URL = "rtmp://angkasatimelapse.com/live/mykey"
 wifi_ssid = "BMZimages"
 wifi_password = "bennamazarina"
+gopro_ssid = "GoProHero9Angkasa"
+gopro_password = "NPc-hg6-S5S"
 stream_started = False
 GOPRO_BASE_URL = "http://10.5.5.9:8080"
 
@@ -57,3 +59,5 @@ SHUTTER_VALUE = 0
 ISO_VALUE = 0
 AWB_VALUE = 0
 EV_VALUE = 0
+
+need_http = ["capture","reqConfig","shutter","iso","awb","ev"]
