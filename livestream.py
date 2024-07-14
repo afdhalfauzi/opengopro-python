@@ -5,7 +5,9 @@ from open_gopro import Params, WirelessGoPro, constants, proto
 from rich.console import Console
 from config import *
 
-async def start(args: argparse.Namespace, gopro: WirelessGoPro, console:Console):
+console = Console()  # rich consoler printer
+
+async def start(args: argparse.Namespace, gopro: WirelessGoPro):
     # async with WirelessGoPro(args.identifier, enable_wifi=False) as gopro:
     await gopro.ble_command.set_shutter(shutter=Params.Toggle.DISABLE)
     await gopro.ble_command.register_livestream_status(
@@ -45,7 +47,6 @@ async def start(args: argparse.Namespace, gopro: WirelessGoPro, console:Console)
 
     console.print("[yellow]Livestream is now streaming and should be available for viewing.")
             
-async def stop(args: argparse.Namespace, gopro: WirelessGoPro, console:Console):
-    # await ainput("Press enter to stop livestreaming...\n")
+async def stop(args: argparse.Namespace, gopro: WirelessGoPro):
     await gopro.ble_command.set_shutter(shutter=Params.Toggle.DISABLE)
     await gopro.ble_command.release_network()
