@@ -10,83 +10,130 @@ from rich.console import Console
 import serial
 import json
 import os
+import time
 
 import media_handler
 import http_commands
 import livestream
 import config
+import atexit
+
+def exit_handler():
+    os.system("python main.py")
+    return
+
 
 console = Console()  # rich consoler printer
 
 async def main(args: argparse.Namespace) -> None:
+    # auto restart program if error occurred
+    atexit.register(exit_handler)
+    
     setup_logging(__name__, args.log)
     ser = serial.Serial('/dev/ttyAMA0', 115200, timeout=0.5)
+    command_on_buff = ""
+    
     while True:
-        async with WirelessGoPro(args.identifier) as gopro:
-            request_config(ser)
-            console.print("[bright_cyan]Waiting for json command..")
+        #open connection to gopro (BLE & AP)
+        gopro = WirelessGoPro(args.identifier)
+        await gopro.open()
+        request_config(ser)
+        console.print("[bright_cyan]Waiting for json command..")
+        
+        while True:
+            # execute command that comes while gopro sleeps
+            if command_on_buff != "":
+                await process_command(command_on_buff, gopro, ser)
+                command_on_buff = ""
             
-            while True:
-                if ser.in_waiting:
-                    serial_string = ser.readline().decode("utf-8")
-                    console.print(f"[bright_yellow]Received from serial: {serial_string}")
-                    
-                    if is_json(serial_string):	#only decode if serial_string in json format
-                        json_data = json.loads(serial_string)
-                    else:
-                        json_data = ""
-                        console.print("[red3]data is not in json format")
-                        
-                    if is_need_http_connection(json_data):
-                        check_if_connected_to_gopro_AP()
+            if ser.in_waiting:
+                serial_string = ser.readline().decode("utf-8")
+                console.print(f"[bright_yellow]Received from serial: {serial_string}")
+                
+                if is_bluetooth_connected():
+                    await process_command(serial_string, gopro, ser)
+                else:
+                    command_on_buff = serial_string
+                    break
+                
+async def process_command(serial_string, gopro, ser):
+    if is_json(serial_string):	#only decode if serial_string in json format
+        json_data = json.loads(serial_string)
+    else:
+        json_data = ""
+        console.print("[red3]data is not in json format")
+        
+    if is_need_http_connection(json_data):
+        check_if_connected_to_gopro_AP()
 
-                    if "capture" in json_data:
-                        assert (await gopro.ble_command.set_shutter(shutter=Params.Toggle.ENABLE)).ok
-                        media_handler.download_last_captured_media()
-                        # console.print(f"[yellow]Connecting to {config.wifi_ssid}"
-                        # os.system("sudo nmcli d wifi connect {} password {}".format(config.wifi_ssid, config.wifi_password))
-                        # console.print(f"[yellow]Connected to {config.wifi_ssid}")
-                        # os.chdir("gdrive_auto_backup_files")
-                        # os.system("npm start") 
+    if "capture" in json_data:
+        assert (await gopro.ble_command.set_shutter(shutter=Params.Toggle.ENABLE)).ok
+        time.sleep(2)
+        media_handler.download_last_captured_media()
+        time.sleep(1)
+        # console.print(f"[yellow]Connecting to {config.wifi_ssid}"
+        # os.system("sudo nmcli d wifi connect {} password {}".format(config.wifi_ssid, config.wifi_password))
+        # console.print(f"[yellow]Connected to {config.wifi_ssid}")
+        # os.chdir("gdrive_auto_backup_files")
+        # os.system("npm start")
+        
+        # take picture
+        # download last captured media
+        # gopro sleep
+        # switch to internet AP
+        # run auto_backup program
+        # wait for feedback from auto backup program
+        # switch to gopro AP
+        
+        await gopro.ble_command.sleep()
+        await gopro.close()
                     
-                    if "reqConfig" in json_data:
-                        request_config(ser)
-                    if "stream" in json_data:
-                        start_stream = json_data['stream']
-                        if start_stream == 1:
-                            await livestream.start(args, gopro)
-                        elif start_stream == 0:
-                            await livestream.stop(args, gopro)
-                            break #break from while true so raspi could enable the gopro AP
-                        
-                    if "shutter" in json_data:	#check if "shutter" key exist in json
-                        shutter = json_data['shutter']
-                        if shutter != config.SHUTTER_VALUE:
-                            command = config.GOPRO_BASE_URL + "/gp/gpControl/setting/" + config.SHUTTER_ID + "/" + str(shutter)
-                            response = http_commands.send(command)
-                            console.print(f"[yellow]Changing shutter speed into {config.SHUTTER[shutter]}")
-                            config.SHUTTER_VALUE =  shutter
-                    if "iso" in json_data:
-                        iso = json_data['iso']
-                        if iso != config.ISO_VALUE:
-                            command = config.GOPRO_BASE_URL + "/gp/gpControl/setting/" + config.ISO_ID + "/" + str(iso)
-                            response = http_commands.send(command)
-                            console.print(f"[yellow]Changing ISO into {config.ISO[iso]}")
-                            config.ISO_VALUE = iso
-                    if "awb" in json_data:
-                        awb = json_data['awb']
-                        if awb != config.AWB_VALUE:
-                            command = config.GOPRO_BASE_URL + "/gp/gpControl/setting/" + config.AWB_ID + "/" + str(awb)
-                            response = http_commands.send(command)
-                            console.print(f"[yellow]Changing AWB into {config.AWB[awb]}")
-                            config.AWB_VALUE = awb
-                    if "ev" in json_data:
-                        ev = json_data['ev']
-                        if ev != config.EV_VALUE:
-                            command = config.GOPRO_BASE_URL + "/gp/gpControl/setting/" + config.EV_ID + "/" + str(ev)
-                            response = http_commands.send(command)
-                            console.print(f"[yellow]Changing EV into {config.EV[ev]}")
-                            config.EV_VALUE = ev
+    
+    if "reqConfig" in json_data:
+        request_config(ser)
+    if "stream" in json_data:
+        start_stream = json_data['stream']
+        if start_stream == 1:
+            await livestream.start(args, gopro)
+        elif start_stream == 0:
+            await livestream.stop(args, gopro)
+            #break #break from while true so raspi could enable the gopro AP
+        
+    if "shutter" in json_data:	#check if "shutter" key exist in json
+        shutter = json_data['shutter']
+        if shutter != config.SHUTTER_VALUE:
+            command = config.GOPRO_BASE_URL + "/gp/gpControl/setting/" + config.SHUTTER_ID + "/" + str(shutter)
+            response = http_commands.send(command)
+            console.print(f"[yellow]Changing shutter speed into {config.SHUTTER[shutter]}")
+            config.SHUTTER_VALUE =  shutter
+    if "iso" in json_data:
+        iso = json_data['iso']
+        if iso != config.ISO_VALUE:
+            command = config.GOPRO_BASE_URL + "/gp/gpControl/setting/" + config.ISO_ID + "/" + str(iso)
+            response = http_commands.send(command)
+            console.print(f"[yellow]Changing ISO into {config.ISO[iso]}")
+            config.ISO_VALUE = iso
+    if "awb" in json_data:
+        awb = json_data['awb']
+        if awb != config.AWB_VALUE:
+            command = config.GOPRO_BASE_URL + "/gp/gpControl/setting/" + config.AWB_ID + "/" + str(awb)
+            response = http_commands.send(command)
+            console.print(f"[yellow]Changing AWB into {config.AWB[awb]}")
+            config.AWB_VALUE = awb
+    if "ev" in json_data:
+        ev = json_data['ev']
+        if ev != config.EV_VALUE:
+            command = config.GOPRO_BASE_URL + "/gp/gpControl/setting/" + config.EV_ID + "/" + str(ev)
+            response = http_commands.send(command)
+            console.print(f"[yellow]Changing EV into {config.EV[ev]}")
+            config.EV_VALUE = ev
+
+def is_bluetooth_connected():
+    output = subprocess.check_output('./check_bluetooth_connection.sh')
+    if "No".encode() in output:
+        return False
+    else:
+        return True
 
 def request_config(ser: serial):
     command = config.GOPRO_BASE_URL + "/gp/gpControl/status"
