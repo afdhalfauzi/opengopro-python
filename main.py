@@ -102,32 +102,32 @@ async def process_command(serial_string, gopro, ser):
         
     if "shutter" in json_data:	#check if "shutter" key exist in json
         shutter = json_data['shutter']
-        if shutter != config.SHUTTER_VALUE:
+        if shutter != config.CURRENT_SHUTTER:
             command = config.GOPRO_BASE_URL + "/gp/gpControl/setting/" + config.SHUTTER_ID + "/" + str(shutter)
             response = http_commands.send(command)
             console.print(f"[yellow]Changing shutter speed into {config.SHUTTER[shutter]}")
-            config.SHUTTER_VALUE =  shutter
+            config.CURRENT_SHUTTER =  shutter
     if "iso" in json_data:
         iso = json_data['iso']
-        if iso != config.ISO_VALUE:
+        if iso != config.CURRENT_ISO:
             command = config.GOPRO_BASE_URL + "/gp/gpControl/setting/" + config.ISO_ID + "/" + str(iso)
             response = http_commands.send(command)
             console.print(f"[yellow]Changing ISO into {config.ISO[iso]}")
-            config.ISO_VALUE = iso
+            config.CURRENT_ISO = iso
     if "awb" in json_data:
         awb = json_data['awb']
-        if awb != config.AWB_VALUE:
+        if awb != config.CURRENT_AWB:
             command = config.GOPRO_BASE_URL + "/gp/gpControl/setting/" + config.AWB_ID + "/" + str(awb)
             response = http_commands.send(command)
             console.print(f"[yellow]Changing AWB into {config.AWB[awb]}")
-            config.AWB_VALUE = awb
+            config.CURRENT_AWB = awb
     if "ev" in json_data:
         ev = json_data['ev']
-        if ev != config.EV_VALUE:
+        if ev != config.CURRENT_EV:
             command = config.GOPRO_BASE_URL + "/gp/gpControl/setting/" + config.EV_ID + "/" + str(ev)
             response = http_commands.send(command)
             console.print(f"[yellow]Changing EV into {config.EV[ev]}")
-            config.EV_VALUE = ev
+            config.CURRENT_EV = ev
 
 def is_bluetooth_connected():
     output = subprocess.check_output('./check_bluetooth_connection.sh')
@@ -142,17 +142,17 @@ def request_config(ser: serial):
     console.print("[yellow]Getting current GoPro settings..")
     
     
-    config.SHUTTER_VALUE = settings_json['settings'][config.SHUTTER_ID]  #int
-    config.ISO_VALUE = settings_json['settings'][config.ISO_ID]
-    config.AWB_VALUE = settings_json['settings'][config.AWB_ID]
-    config.EV_VALUE = settings_json['settings'][config.EV_ID]
+    config.CURRENT_SHUTTER = settings_json['settings'][config.SHUTTER_ID]  #int
+    config.CURRENT_ISO = settings_json['settings'][config.ISO_ID]
+    config.CURRENT_AWB = settings_json['settings'][config.AWB_ID]
+    config.CURRENT_EV = settings_json['settings'][config.EV_ID]
     
     #build JSON using dictionary
     settings_json = {
-        "shutter" : config.SHUTTER[config.SHUTTER_VALUE],
-        "iso" : config.ISO[config.ISO_VALUE],
-        "awb" : config.AWB[config.AWB_VALUE],
-        "ev" : config.EV[config.EV_VALUE],
+        "shutter" : config.SHUTTER[config.CURRENT_SHUTTER],
+        "iso" : config.ISO[config.CURRENT_ISO],
+        "awb" : config.AWB[config.CURRENT_AWB],
+        "ev" : config.EV[config.CURRENT_EV],
     }
     json_string = json.dumps(settings_json)
     json_string = json_string.encode()

@@ -55,9 +55,11 @@ EV = {
     0 : "2.0",
 }
 
-SHUTTER_VALUE = 0
-ISO_VALUE = 0
-AWB_VALUE = 0
-EV_VALUE = 0
+#CAMERA STATE
+CURRENT_SHUTTER = 0
+CURRENT_ISO = 0
+CURRENT_AWB = 0
+CURRENT_EV = 0
+
 
 need_http = ["capture","reqConfig","shutter","iso","awb","ev"]
