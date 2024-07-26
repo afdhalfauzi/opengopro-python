@@ -67,26 +67,27 @@ async def process_command(serial_string, gopro, ser):
         check_if_connected_to_gopro_AP()
 
     if "capture" in json_data:
+        #take picture
         assert (await gopro.ble_command.set_shutter(shutter=Params.Toggle.ENABLE)).ok
+        
+        #download last captured media
         time.sleep(2)
         media_handler.download_last_captured_media()
         time.sleep(1)
-        # console.print(f"[yellow]Connecting to {config.wifi_ssid}"
-        # os.system("sudo nmcli d wifi connect {} password {}".format(config.wifi_ssid, config.wifi_password))
-        # console.print(f"[yellow]Connected to {config.wifi_ssid}")
-        # os.chdir("gdrive_auto_backup_files")
-        # os.system("npm start")
         
-        # take picture
-        # download last captured media
-        # gopro sleep
-        # switch to internet AP
-        # run auto_backup program
-        # wait for feedback from auto backup program
-        # switch to gopro AP
-        
+        #gopro sleep and close connection
         await gopro.ble_command.sleep()
         await gopro.close()
+        
+        #switch to internet AP
+        console.print(f"[yellow]Connecting to {config.wifi_ssid}")
+        os.system("sudo nmcli d wifi connect {} password {}".format(config.wifi_ssid, config.wifi_password))
+        console.print(f"[yellow]Connected to {config.wifi_ssid}")
+        
+        #run auto backup program
+        os.chdir("gdrive_auto_backup_files")
+        os.system("npm start")
+        console.print(f"[yellow]ready for next command..")
                     
     
     if "reqConfig" in json_data:
