@@ -74,6 +74,7 @@ async def process_command(serial_string, gopro, ser):
         time.sleep(2)
         media_handler.download_last_captured_media()
         time.sleep(1)
+        request_config(ser)
         
         #gopro sleep and close connection
         await gopro.ble_command.sleep()
@@ -85,8 +86,9 @@ async def process_command(serial_string, gopro, ser):
         console.print(f"[yellow]Connected to {config.wifi_ssid}")
         
         #run auto backup program
-        os.chdir("gdrive_auto_backup_files")
+        os.chdir("gdrive_auto_backup_files") #change directories
         os.system("npm start")
+        os.chdir("..") #back to old working directories
         console.print(f"[yellow]ready for next command..")
                     
     
@@ -117,7 +119,7 @@ async def process_command(serial_string, gopro, ser):
     if "awb" in json_data:
         awb = json_data['awb']
         if awb != config.CURRENT_AWB:
-            command = config.GOPRO_BASE_URL + "/gp/gpControl/setting/" + config.AWB_ID + "/" + str(awb)
+            command= config.GOPRO_BASE_URL + "/gp/gpControl/setting/" + config.AWB_ID + "/" + str(awb)
             response = http_commands.send(command)
             console.print(f"[yellow]Changing AWB into {config.AWB[awb]}")
             config.CURRENT_AWB = awb
@@ -139,20 +141,38 @@ def is_bluetooth_connected():
 def request_config(ser: serial):
     command = config.GOPRO_BASE_URL + "/gp/gpControl/status"
     settings_json = http_commands.send(command)
-    console.print("[yellow]Getting current GoPro settings..")
+    console.print("[yellow]Getting current GoPro config..")
     
+    #get camera current state
+    config.CAMERA_NAME              = settings_json['status'][config.CAMERA_NAME_ID]
+    config.CURRENT_TOTAL_PHOTOS     = settings_json['status'][config.TOTAL_PHOTOS_ID]
+    config.CURRENT_REMAINING_PHOTOS = settings_json['status'][config.REMAINING_PHOTOS_ID]
+    config.CURRENT_BATTERY_PERC     = settings_json['status'][config.BATTERY_PERC_ID]
+    config.CURRENT_MEMORY_REMAINING = settings_json['status'][config.MEMORY_REMAINING_ID]
     
-    config.CURRENT_SHUTTER = settings_json['settings'][config.SHUTTER_ID]  #int
-    config.CURRENT_ISO = settings_json['settings'][config.ISO_ID]
-    config.CURRENT_AWB = settings_json['settings'][config.AWB_ID]
-    config.CURRENT_EV = settings_json['settings'][config.EV_ID]
+    #get camera current setting
+    config.CURRENT_SHUTTER  = settings_json['settings'][config.SHUTTER_ID]  #int
+    config.CURRENT_ISO      = settings_json['settings'][config.ISO_ID]
+    config.CURRENT_AWB      = settings_json['settings'][config.AWB_ID]
+    config.CURRENT_EV       = settings_json['settings'][config.EV_ID]
+    
+    #get memory usage from memory remaining data
+    #memory_usage = 128 - (config.CURRENT_MEMORY_REMAINING * 1024 / 10**9)
+    
+    #convert kilobytes 1024 into gigabytes 1000
+    config.CURRENT_MEMORY_REMAINING = config.CURRENT_MEMORY_REMAINING * 1024 / 10**9
     
     #build JSON using dictionary
     settings_json = {
-        "shutter" : config.SHUTTER[config.CURRENT_SHUTTER],
-        "iso" : config.ISO[config.CURRENT_ISO],
-        "awb" : config.AWB[config.CURRENT_AWB],
-        "ev" : config.EV[config.CURRENT_EV],
+        "camera_name"       : config.CAMERA_NAME,
+        "total_photos"      : config.CURRENT_TOTAL_PHOTOS,
+        "remaining_photos"  : config.CURRENT_REMAINING_PHOTOS,
+        "battery_percentage": config.CURRENT_BATTERY_PERC,
+        "memory_remaining"  : config.CURRENT_MEMORY_REMAINING,
+        "shutter"           : config.SHUTTER[config.CURRENT_SHUTTER],
+        "iso"               : config.ISO[config.CURRENT_ISO],
+        "awb"               : config.AWB[config.CURRENT_AWB],
+        "ev"                : config.EV[config.CURRENT_EV],
     }
     json_string = json.dumps(settings_json)
     json_string = json_string.encode()

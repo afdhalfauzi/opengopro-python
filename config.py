@@ -1,10 +1,10 @@
-rtmp_URL = "rtmp://angkasatimelapse.com/live/mykey"
-wifi_ssid = "BMZimages"
-wifi_password = "bennamazarina"
-gopro_ssid = "GoProHero9Angkasa"
-gopro_password = "NPc-hg6-S5S"
-stream_started = False
-GOPRO_BASE_URL = "http://10.5.5.9:8080"
+rtmp_URL        = "rtmp://angkasatimelapse.com/live/mykey"
+wifi_ssid       = "BMZimages"
+wifi_password   = "bennamazarina"
+gopro_ssid      = "GoProHero9Angkasa"
+gopro_password  = "NPc-hg6-S5S"
+stream_started  = False
+GOPRO_BASE_URL  = "http://10.5.5.9:8080"
 
 #======ID=====
 SHUTTER_ID = "146"    #146 photo 145 video
@@ -56,10 +56,23 @@ EV = {
 }
 
 #CAMERA STATE
-CURRENT_SHUTTER = 0
-CURRENT_ISO = 0
-CURRENT_AWB = 0
-CURRENT_EV = 0
+CAMERA_NAME = ""
+CURRENT_TOTAL_PHOTOS    = 0
+CURRENT_REMAINING_PHOTOS= 0
+CURRENT_BATTERY_PERC    = 0
+CURRENT_MEMORY_REMAINING= 0
+CURRENT_SHUTTER         = 0
+CURRENT_ISO             = 0
+CURRENT_AWB             = 0
+CURRENT_EV              = 0
+
+#CAMERA STATE URL ID
+CAMERA_NAME_ID      = "30"
+TOTAL_PHOTOS_ID     = "38"
+REMAINING_PHOTOS_ID = "34"
+BATTERY_PERC_ID     = "70"
+MEMORY_REMAINING_ID = "54"
+
 
 
 need_http = ["capture","reqConfig","shutter","iso","awb","ev"]
