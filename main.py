@@ -11,6 +11,7 @@ import serial
 import json
 import os
 import time
+import logging
 
 import media_handler
 import http_commands
@@ -29,6 +30,13 @@ async def main(args: argparse.Namespace) -> None:
     # auto restart program if error occurred
     atexit.register(exit_handler)
     
+    logging.basicConfig(
+        level=logging.DEBUG,
+        format="%(asctime)s %(levelname)s %(message)s",
+        datefmt="%Y-%m-%d %H:%M:%S",
+        filename="app.log"
+    )
+    logging.info("\nApp restart")
     setup_logging(__name__, args.log)
     ser = serial.Serial('/dev/ttyAMA0', 115200, timeout=0.5)
     command_on_buff = ""
@@ -36,32 +44,38 @@ async def main(args: argparse.Namespace) -> None:
     while True:
         #open connection to gopro (BLE & AP)
         gopro = WirelessGoPro(args.identifier)
+        await gopro.close()
         await gopro.open()
         request_config(ser)
         console.print("[bright_cyan]Waiting for json command..")
+        logging.info("GoPro connected")
         
         while True:
             # execute command that comes while gopro sleeps
             if command_on_buff != "":
-                await process_command(command_on_buff, gopro, ser)
+                await process_command(command_on_buff, gopro, ser, args)
                 command_on_buff = ""
             
             if ser.in_waiting:
                 serial_string = ser.readline().decode("utf-8")
                 console.print(f"[bright_yellow]Received from serial: {serial_string}")
+                logging.info("Received from serial: %s", serial_string)
                 
                 if is_bluetooth_connected():
-                    await process_command(serial_string, gopro, ser)
+                    await process_command(serial_string, gopro, ser, args)
                 else:
                     command_on_buff = serial_string
                     break
                 
-async def process_command(serial_string, gopro, ser):
+async def process_command(serial_string, gopro, ser, args):
+    #parse json
     if is_json(serial_string):	#only decode if serial_string in json format
         json_data = json.loads(serial_string)
     else:
         json_data = ""
         console.print("[red3]data is not in json format")
+        logging.warning("data is not in json format")
+        return
         
     if is_need_http_connection(json_data):
         check_if_connected_to_gopro_AP()
@@ -69,18 +83,22 @@ async def process_command(serial_string, gopro, ser):
     if "capture" in json_data:
         #take picture
         assert (await gopro.ble_command.set_shutter(shutter=Params.Toggle.ENABLE)).ok
+        logging.info("\ncapture")
         
         #download last captured media
         time.sleep(2)
         media_handler.download_last_captured_media()
+        logging.info("media downloaded")
         time.sleep(1)
         request_config(ser)
         
         #gopro sleep and close connection
         await gopro.ble_command.sleep()
         await gopro.close()
+        logging.info("GoPro sleep")
         
         #switch to internet AP
+        logging.info("Connecting to %s", config.wifi_ssid)
         console.print(f"[yellow]Connecting to {config.wifi_ssid}")
         os.system("sudo nmcli d wifi connect {} password {}".format(config.wifi_ssid, config.wifi_password))
         console.print(f"[yellow]Connected to {config.wifi_ssid}")
@@ -90,17 +108,20 @@ async def process_command(serial_string, gopro, ser):
         os.system("npm start")
         os.chdir("..") #back to old working directories
         console.print(f"[yellow]ready for next command..")
+        logging.info("auto backup done")
                     
-    
+
     if "reqConfig" in json_data:
         request_config(ser)
     if "stream" in json_data:
         start_stream = json_data['stream']
         if start_stream == 1:
             await livestream.start(args, gopro)
+            logging.info("Livestream start")
         elif start_stream == 0:
             await livestream.stop(args, gopro)
-            #break #break from while true so raspi could enable the gopro AP
+            await gopro.close() #close connection to reconnect and enable gopro AP
+            logging.info("Livestream stop")
         
     if "shutter" in json_data:	#check if "shutter" key exist in json
         shutter = json_data['shutter']
@@ -109,6 +130,7 @@ async def process_command(serial_string, gopro, ser):
             response = http_commands.send(command)
             console.print(f"[yellow]Changing shutter speed into {config.SHUTTER[shutter]}")
             config.CURRENT_SHUTTER =  shutter
+            logging.info("Changing shutter speed into %s", config.SHUTTER[shutter])
     if "iso" in json_data:
         iso = json_data['iso']
         if iso != config.CURRENT_ISO:
@@ -116,6 +138,7 @@ async def process_command(serial_string, gopro, ser):
             response = http_commands.send(command)
             console.print(f"[yellow]Changing ISO into {config.ISO[iso]}")
             config.CURRENT_ISO = iso
+            logging.info("Changing ISO into %s", config.ISO[iso])
     if "awb" in json_data:
         awb = json_data['awb']
         if awb != config.CURRENT_AWB:
@@ -123,6 +146,7 @@ async def process_command(serial_string, gopro, ser):
             response = http_commands.send(command)
             console.print(f"[yellow]Changing AWB into {config.AWB[awb]}")
             config.CURRENT_AWB = awb
+            logging.info("Changing AWB into %s", config.AWB[awb])
     if "ev" in json_data:
         ev = json_data['ev']
         if ev != config.CURRENT_EV:
@@ -130,7 +154,8 @@ async def process_command(serial_string, gopro, ser):
             response = http_commands.send(command)
             console.print(f"[yellow]Changing EV into {config.EV[ev]}")
             config.CURRENT_EV = ev
-
+            logging.info("Changing EV into %s", config.EV[ev])
+    
 def is_bluetooth_connected():
     output = subprocess.check_output('./check_bluetooth_connection.sh')
     if "No".encode() in output:
@@ -142,6 +167,7 @@ def request_config(ser: serial):
     command = config.GOPRO_BASE_URL + "/gp/gpControl/status"
     settings_json = http_commands.send(command)
     console.print("[yellow]Getting current GoPro config..")
+    logging.info("Getting current GoPro config..")
     
     #get camera current state
     config.CAMERA_NAME              = settings_json['status'][config.CAMERA_NAME_ID]
