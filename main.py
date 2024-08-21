@@ -118,6 +118,36 @@ async def process_command(serial_string, gopro, ser, args, logger):
         logger.info("auto backup done\n")
                     
 
+    if "skippedCapture" in json_data:
+        num_skip = json_data['skippedCapture']
+        for i in range (0, num_skip):
+            #take picture
+            assert (await gopro.ble_command.set_shutter(shutter=Params.Toggle.ENABLE)).ok
+            logger.info("capture %i", i+1)
+            
+            #download last captured media
+            time.sleep(2)
+            media_handler.download_last_captured_media()
+            logger.info("media downloaded %i", i+1)
+            
+        #gopro sleep and close connection
+        await gopro.ble_command.sleep()
+        await gopro.close()
+        logger.info("GoPro sleep")
+        
+        #switch to internet AP
+        logger.info("Connecting to %s", config.wifi_ssid)
+        console.print(f"[yellow]Connecting to {config.wifi_ssid}")
+        os.system("sudo nmcli d wifi connect {} password {}".format(config.wifi_ssid, config.wifi_password))
+        console.print(f"[yellow]Connected to {config.wifi_ssid}")
+        
+        #run auto backup program
+        os.chdir("gdrive_auto_backup_files") #change directories
+        os.system("npm start")
+        os.chdir("..") #back to old working directories
+        console.print(f"[yellow]ready for next command..")
+        logger.info("auto backup done\n")
+            
     if "reqConfig" in json_data:
         request_config(ser, logger)
     if "stream" in json_data:
