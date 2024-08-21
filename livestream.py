@@ -8,7 +8,6 @@ from config import *
 console = Console()  # rich consoler printer
 
 async def start(args: argparse.Namespace, gopro: WirelessGoPro):
-    # async with WirelessGoPro(args.identifier, enable_wifi=False) as gopro:
     await gopro.ble_command.set_shutter(shutter=Params.Toggle.DISABLE)
     await gopro.ble_command.register_livestream_status(
         register=[proto.EnumRegisterLiveStreamStatus.REGISTER_LIVE_STREAM_STATUS_STATUS]
